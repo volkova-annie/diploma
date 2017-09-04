@@ -1,0 +1,12 @@
+.navbar {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000000;
+}
