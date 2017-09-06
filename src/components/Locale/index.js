@@ -5,8 +5,8 @@ import st from './style.module.css'
 const Locale = () =>
   <div className={st.locale}>
     <select className={st.select}>
-      <option>ru</option>
-      <option>en</option>
+      <option>RU</option>
+      <option>EN</option>
     </select>
   </div>
 
