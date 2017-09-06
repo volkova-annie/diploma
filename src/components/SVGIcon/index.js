@@ -16,6 +16,7 @@ const Sprite = () =>
   <svg className={st.sprite}>
     {icons.map(icon =>
       <symbol
+        key={icon.id}
         id={icon.id}
         viewBox={icon.viewBox}
         dangerouslySetInnerHTML={{__html: icon.markup}}/>
