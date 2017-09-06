@@ -9,7 +9,7 @@ const Header = () =>
   <header className={st.header}>
     <div className={st.top}>
       <Social></Social>
-      <Locale></Locale>
+      {/* <Locale></Locale> */}
     </div>
     <Navbar></Navbar>
   </header>
