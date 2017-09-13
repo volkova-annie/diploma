@@ -1,0 +1,14 @@
+.phone {
+  display: flex;
+  height: 19px;
+  align-items: flex-start;
+  text-decoration: none;
+  font-size: 17px;
+  color: #000000;
+  font-weight: bold;
+}
+.number {
+  display: flex;
+  margin-top: -5px;
+
+}

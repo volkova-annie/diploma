@@ -6,6 +6,9 @@
 }
 .top {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-bottom: 2em;
+}
+.top span:nth-child(1) {
+  font-size: 22px;
 }
