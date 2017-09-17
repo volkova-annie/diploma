@@ -14,6 +14,8 @@ const TemplateWrapper = ({ children }) =>
     <div>
       {children()}
     </div>
+
+    <Footer></Footer>
     <Sprite />
     <Helmet
       title="Gatsby Default Starter"
@@ -22,7 +24,6 @@ const TemplateWrapper = ({ children }) =>
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Footer></Footer>
   </div>
 
 TemplateWrapper.propTypes = {
