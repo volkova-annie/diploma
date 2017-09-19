@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Cuba Bar - Golohovaya 28`,
+    title: 'Cuba Bar - Golohovaya 28',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
+    // 'gatsby-plugin-preact',
     {
       resolve: 'gatsby-source-contentful',
       options: {
