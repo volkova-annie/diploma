@@ -24,9 +24,6 @@
     "lint": "eslint ./src & stylelint \"./src/{components,css}/*.css\" & remark .",
     "precommit": "lint-staged"
   },
-  "engines": {
-    "node": "8.3.0"
-  },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
     "eslint": "^4.7.0",
