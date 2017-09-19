@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import {Sprite, Icon} from '../components/SVGIcon'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import {Modals} from '../components/Modals'
 
 import './index.css'
 
@@ -16,14 +17,14 @@ const TemplateWrapper = ({ children }) =>
     </div>
 
     <Footer></Footer>
+    <Modals />
     <Sprite />
     <Helmet
-      title="Gatsby Default Starter"
+      title="Cuba"
       meta={[
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
+      ]} />
   </div>
 
 TemplateWrapper.propTypes = {
