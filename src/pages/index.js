@@ -3,34 +3,20 @@ import Link from 'gatsby-link'
 import Slider from '../components/Slider'
 import Actions from '../components/Actions'
 import {transformLocales} from '../modules/transform-locales'
+import Collage from '../components/Collage'
 import Poster from '../components/Poster'
+
+const leftPad = require('left-pad')
 
 const IndexPage = (props) => {
   const localesData = transformLocales(props.data, ['ru', 'en'])
   const currentLocale = 'ru'
   const {events, menu, gallery} = localesData[currentLocale]
-  // const date = node.date
 
   return <div>
     <Slider></Slider>
     <Actions></Actions>
-    {events.edges.map((edge) => {
-      const {node} = edge
-      const {date} = node
-      const ddmmyy = new Date(date).toLocaleDateString()
-      const hours = new Date(date).getHours()
-      const minutes = new Date(date).getUTCMinutes() > 10 ? new Date(date).getUTCMinutes() : '0' + new Date(date).getUTCMinutes()
-      const time = hours + ':' + minutes
-
-      return <Poster
-        image={node.image}
-        title={node.title}
-        date={ddmmyy}
-        time={time}
-        type={node.type}
-        description={node.description}
-        key={node.id} />
-    })}
+    <Collage items={events.edges}></Collage>
   </div>
 }
 
