@@ -7,17 +7,17 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import {Modals} from '../components/Modals'
 
-import './index.css'
+import './style.css'
 
 const TemplateWrapper = ({ children }) =>
   <div>
+    <Modals />
     <Header></Header>
     <div>
       {children()}
     </div>
 
     <Footer></Footer>
-    <Modals />
     <Sprite />
     <Helmet
       title="Cuba"
