@@ -2,9 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 const MenuPage = (props) => {
-  console.log(props);
   const {data: {ru}} = props
-  
+
   return <div>
     <h1>Menu</h1>
     <Link to="/">Go to index</Link>

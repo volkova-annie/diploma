@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 const EventsPage = (props) => {
-  console.log(props);
   const {data: {ru}} = props
 
   return <div>
