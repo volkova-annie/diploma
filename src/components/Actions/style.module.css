@@ -1,17 +1,13 @@
 .actions {
-  font-size: 14px;
+  font-size: .8rem;
   width: 100%;
-  margin: auto;
-  border: 1px solid gray;
-}
-.top {
+  margin: 30px auto;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #eee;
+
 }
-.bottom {
-  margin-top: 2em;
-  text-align: center;
-}
+
 .social_title {
   font-weight: bold;
   margin-bottom: 1em;
