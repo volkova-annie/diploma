@@ -1,0 +1,28 @@
+.header {
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-bottom: .8em;
+}
+
+.header:after {
+  content: '—';
+  display: block;
+  font-weight: 100;
+  margin-top: .8em;
+}
+
+.subtitle {
+  text-align: center;
+  font-style: italic;
+  font-size: .8em;
+}
+
+.text {
+  font-size: .85em;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+}
