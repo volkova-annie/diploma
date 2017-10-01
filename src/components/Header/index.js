@@ -10,8 +10,12 @@ import st from './style.module.css'
 const Header = () =>
   <header className={st.header}>
     <div className={st.top}>
-      <Phone/>
-      <Iconed className={st.logo} icon='cuba' title='Cuba-bar' subtitle=''/>
+      <Phone />
+      <Iconed
+        className={st.logo}
+        icon='cuba'
+        title='Cuba-bar'
+        subtitle='' />
       <Social></Social>
     </div>
     <Navbar></Navbar>

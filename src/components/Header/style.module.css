@@ -1,14 +1,14 @@
 .header {
-  /*max-width: 940px;*/
   margin: 20px 0;
-  font-size: 14px;
-  border: 1px solid gray;
+  font-size: .8rem;
 }
+
 .top {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2em;
 }
+
 .top span:nth-child(1) {
   font-size: 22px;
 }
