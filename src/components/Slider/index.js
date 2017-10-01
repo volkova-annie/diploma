@@ -10,23 +10,27 @@ import styles from 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 const Slider = () =>
   // <Carousel showArrows='true' onChange={onChange} onClickItem={onClickItem} onClickThumb={onClickThumb}>
-  <Carousel showThumbs={false} infiniteLoop showArrows autoPlay interval={10000}>
-  {/* <Carousel> */}
+  <Carousel
+    showThumbs={false}
+    infiniteLoop
+    showArrows
+    autoPlay
+    interval={10000}>
     <div>
-        <img src={img1} />
-        <p className={st.legend}>Legend 1</p>
+      <img src={img1} />
+      <p className={st.legend}>Legend 1</p>
     </div>
     <div>
-        <img src={img2} />
-        <p className={st.legend}>Legend 2</p>
+      <img src={img2} />
+      <p className={st.legend}>Legend 2</p>
     </div>
     <div>
-        <img src={img3} />
-        <p className={st.legend}>Legend 3</p>
+      <img src={img3} />
+      <p className={st.legend}>Legend 3</p>
     </div>
     <div>
-        <img src={img4} />
-        <p className={st.legend}>Legend 4</p>
+      <img src={img4} />
+      <p className={st.legend}>Legend 4</p>
     </div>
   </Carousel>
 
