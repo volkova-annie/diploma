@@ -8,7 +8,7 @@ import img3 from '../../../assets/carousel/3.jpg'
 import img4 from '../../../assets/carousel/4.jpg'
 import styles from 'react-responsive-carousel/lib/styles/carousel.min.css'
 
-const Slider = () =>
+const CarouselWidget = () =>
   // <Carousel showArrows='true' onChange={onChange} onClickItem={onClickItem} onClickThumb={onClickThumb}>
   <Carousel
     showThumbs={false}
@@ -35,4 +35,4 @@ const Slider = () =>
   </Carousel>
 
 // ReactDOM.render(<DemoCarousel />, document.querySelector('.demo-carousel'));
-export default Slider
+export default CarouselWidget

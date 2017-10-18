@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Slider from '../components/Slider'
+import CarouselWidget from '../components/CarouselWidget'
 import Actions from '../components/Actions'
 import {transformLocales} from '../modules/transform-locales'
 import Collage from '../components/Collage'
@@ -15,7 +15,7 @@ const IndexPage = (props) => {
   const {events, menu, gallery} = localesData[currentLocale]
 
   return <div>
-    <Slider></Slider>
+    <CarouselWidget></CarouselWidget>
     <Actions></Actions>
     <h2 className={st.header}>О Кубе</h2>
     <p className={st.text}>Lorem ipsum dolor sit amet, veniam expetenda intellegebat quo et, mel ei nostro volutpat facilisis. Pro eros solet ornatus ea. Mel graecis commune maluisset cu, illum iuvaret principes eam in, an qui nisl justo neglegentur. Cum at mentitum accommodare.
