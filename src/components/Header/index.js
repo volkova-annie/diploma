@@ -7,18 +7,19 @@ import Iconed from '../Iconed'
 import Phone from '../Phone'
 import st from './style.module.css'
 
-const Header = () =>
+const Header = props => (
   <header className={st.header}>
     <div className={st.top}>
       <Phone />
       <Iconed
         className={st.logo}
-        icon='cuba'
-        title='Cuba-bar'
-        subtitle='' />
-      <Social></Social>
+        icon="cuba"
+        title="Cuba-bar"
+        subtitle="" />
+      <Social />
     </div>
-    <Navbar></Navbar>
+    <Navbar {...props} />
   </header>
+)
 
 export default Header
