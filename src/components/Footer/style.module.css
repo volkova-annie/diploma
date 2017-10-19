@@ -1,5 +1,5 @@
 .footer {
-  font-size: .8rem;
+  font-size: 0.8rem;
   width: 100%;
   margin: 40px auto;
   border-top: 1px solid #eee;
@@ -13,6 +13,10 @@
 .bottom {
   margin-top: 2em;
   text-align: center;
+}
+
+.social {
+  justify-content: center;
 }
 
 .social_title {

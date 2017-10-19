@@ -1,3 +1,8 @@
+@import '../../config.css';
+
 .select {
-  outline-color: #92b1cf;
+  outline-color: var(--color-blue);
+  border: none;
+  background-color: transparent;
+  color: var(--color-red);
 }

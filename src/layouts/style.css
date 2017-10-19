@@ -1,27 +1,4 @@
-html {
-  font-family: Arimo, Helvetica Neue, Helvetica, Arial, sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  min-height: 100vh;
-}
-
-body {
-  font-family: Arimo, Helvetica Neue, Helvetica, Arial, sans-serif;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1280px;
-  min-height: 100vh;
-  padding: 0 5%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: Podkova, serif;
-}
+@import '../config.css';
 
 article,
 aside,
@@ -87,7 +64,7 @@ dfn {
 
 h1 {
   font-size: 2em;
-  margin: .67em 0;
+  margin: 0.67em 0;
 }
 
 mark {
@@ -108,11 +85,11 @@ sup {
 }
 
 sub {
-  bottom: -.25em;
+  bottom: -0.25em;
 }
 
 sup {
-  top: -.5em;
+  top: -0.5em;
 }
 
 img {
@@ -189,7 +166,7 @@ button:-moz-focusring {
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
-  padding: .35em .625em .75em;
+  padding: 0.35em 0.625em 0.75em;
 }
 
 legend {
@@ -228,7 +205,7 @@ textarea {
 
 ::-webkit-input-placeholder {
   color: inherit;
-  opacity: .54;
+  opacity: 0.54;
 }
 
 ::-webkit-file-upload-button {
@@ -255,7 +232,7 @@ html {
 }
 
 body {
-  color: hsla(0, 0%, 0%, .8);
+  color: hsla(0, 0%, 0%, 0.8);
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -317,7 +294,7 @@ h5 {
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: .85028rem;
+  font-size: 0.85028rem;
   line-height: 1.1;
 }
 
@@ -327,7 +304,7 @@ h6 {
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: .78405rem;
+  font-size: 0.78405rem;
   line-height: 1.1;
 }
 
@@ -372,9 +349,9 @@ figure {
 
 pre {
   margin: 0 0 1.45rem;
-  font-size: .85rem;
+  font-size: 0.85rem;
   line-height: 1.42;
-  background: hsla(0, 0%, 0%, .04);
+  background: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
   overflow: auto;
   word-wrap: normal;
@@ -418,7 +395,7 @@ iframe {
 hr {
   margin-bottom: 0 0 0 calc(1.45rem - 1px);
   padding: 0;
-  background: hsla(0, 0%, 0%, .2);
+  background: hsla(0, 0%, 0%, 0.2);
   border: none;
   height: 1px;
 }
@@ -485,32 +462,32 @@ li > p {
 }
 
 code {
-  font-size: .85rem;
+  font-size: 0.85rem;
   line-height: 1.45rem;
 }
 
 kbd {
-  font-size: .85rem;
+  font-size: 0.85rem;
   line-height: 1.45rem;
 }
 
 samp {
-  font-size: .85rem;
+  font-size: 0.85rem;
   line-height: 1.45rem;
 }
 
 abbr {
-  border-bottom: 1px dotted hsla(0, 0%, 0%, .5);
+  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
   cursor: help;
 }
 
 acronym {
-  border-bottom: 1px dotted hsla(0, 0%, 0%, .5);
+  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
   cursor: help;
 }
 
 abbr[title] {
-  border-bottom: 1px dotted hsla(0, 0%, 0%, .5);
+  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
   cursor: help;
   text-decoration: none;
 }
@@ -522,12 +499,12 @@ thead {
 td,
 th {
   text-align: left;
-  border-bottom: 1px solid hsla(0, 0%, 0%, .12);
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
   font-feature-settings: 'tnum';
   -moz-font-feature-settings: 'tnum';
   -ms-font-feature-settings: 'tnum';
   -webkit-font-feature-settings: 'tnum';
-  padding: .725rem .96667rem calc(.725rem - 1px) .96667rem;
+  padding: 0.725rem 0.96667rem calc(0.725rem - 1px) 0.96667rem;
 }
 
 th:first-child,
@@ -542,12 +519,20 @@ td:last-child {
 
 tt,
 code {
-  background-color: hsla(0, 0%, 0%, .04);
+  background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono', 'Liberation Mono', Menlo, Courier, monospace;
+  font-family:
+    'SFMono-Regular',
+    Consolas,
+    'Roboto Mono',
+    'Droid Sans Mono',
+    'Liberation Mono',
+    Menlo,
+    Courier,
+    monospace;
   padding: 0;
-  padding-top: .2em;
-  padding-bottom: .2em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
 }
 
 pre code {
@@ -559,7 +544,7 @@ code:before,
 code:after,
 tt:before,
 tt:after {
-  letter-spacing: -.2em;
+  letter-spacing: -0.2em;
   content: ' ';
 }
 
@@ -574,4 +559,36 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+html {
+  font-family: var(--font-body);
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-light);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headings);
+  color: var(--color-red);
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }

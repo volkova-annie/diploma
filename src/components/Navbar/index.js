@@ -5,37 +5,40 @@ import Locale from '../Locale'
 
 const Navbar = props => {
   const { t } = props
+  const links = [
+    {
+      to: '/events',
+      title: t({ ru: 'События', en: 'Events' }),
+    },
+    {
+      to: '/gallery',
+      title: t({ ru: 'Галерея', en: 'Gallery' }),
+    },
+    {
+      to: '/menu',
+      title: t({ ru: 'Меню', en: 'Menu' }),
+    },
+    {
+      to: '/contacts',
+      title: t({ ru: 'Контакты', en: 'Contacts' }),
+    },
+  ]
 
   return (
     <ul className={st.navbar}>
-      <li className={st.item}>
-        <Link
-          className={st.link}
-          to="/events">
-          {t({ ru: 'События', en: 'Events' })}
-        </Link>
-      </li>
-      <li className={st.item}>
-        <Link
-          className={st.link}
-          to="/gallery">
-          {t({ ru: 'Галерея', en: 'Gallery' })}
-        </Link>
-      </li>
-      <li className={st.item}>
-        <Link
-          className={st.link}
-          to="/menu">
-          {t({ ru: 'Меню', en: 'Menu' })}
-        </Link>
-      </li>
-      <li className={st.item}>
-        <Link
-          className={st.link}
-          to="/contacts">
-          {t({ ru: 'Контакты', en: 'Contacts' })}
-        </Link>
-      </li>
+      {links.map(link => (
+        <li
+          key={link.to}
+          className={st.item}>
+          <Link
+            activeClassName={st.active}
+            className={st.link}
+            to={link.to}>
+            {link.title}
+          </Link>
+        </li>
+      ))}
+
       <li className={st.item}>
         <Locale {...props} />
       </li>

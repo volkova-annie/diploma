@@ -1,6 +1,18 @@
+@import '../../config.css';
+
 .header {
   margin: 20px 0;
-  font-size: .8rem;
+  font-size: 0.8rem;
+  position: relative;
+  color: var(--color-red);
+  font-family: var(--font-headings);
+}
+
+.fill {
+  width: calc(50% - 50px);
+  display: flex;
+  align-items: center;
+  align-content: center;
 }
 
 .top {
@@ -9,14 +21,48 @@
   margin-bottom: 2em;
 }
 
-.top span:nth-child(1) {
-  font-size: 22px;
+.social {
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  fill: var(--color-red);
+}
+
+.logo {
+  background-image: url('//ucarecdn.com/f5b33116-7a4d-4864-bc97-6982f20c696b/logo_cuba.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+}
+
+.phone {
+  display: flex;
+  height: 19px;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.9444rem;
+  font-weight: bold;
+  color: var(--color-red);
+}
+
+.call {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-right: 0.25em;
+  fill: var(--color-red);
+}
+
+.number {
+  display: flex;
 }
 
 @media (max-width: 1023px) {
-
 }
 
 @media (max-width: 767px) {
-
 }
