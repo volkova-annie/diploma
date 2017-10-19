@@ -1,6 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
-import {Carousel} from 'react-responsive-carousel';
+import { Carousel } from 'react-responsive-carousel'
 import st from './style.module.css'
 import img1 from '../../../assets/carousel/1.jpg'
 import img2 from '../../../assets/carousel/2.jpg'
@@ -8,7 +7,7 @@ import img3 from '../../../assets/carousel/3.jpg'
 import img4 from '../../../assets/carousel/4.jpg'
 import styles from 'react-responsive-carousel/lib/styles/carousel.min.css'
 
-const CarouselWidget = () =>
+const CarouselWidget = props =>
   // <Carousel showArrows='true' onChange={onChange} onClickItem={onClickItem} onClickThumb={onClickThumb}>
   <Carousel
     showThumbs={false}
@@ -16,23 +15,16 @@ const CarouselWidget = () =>
     showArrows
     autoPlay
     interval={10000}>
-    <div>
-      <img src={img1} />
-      <p className={st.legend}>Legend 1</p>
-    </div>
-    <div>
-      <img src={img2} />
-      <p className={st.legend}>Legend 2</p>
-    </div>
-    <div>
-      <img src={img3} />
-      <p className={st.legend}>Legend 3</p>
-    </div>
-    <div>
-      <img src={img4} />
-      <p className={st.legend}>Legend 4</p>
-    </div>
+    {props.pictures.map(pic => (
+      <div
+        key={pic.node.id}
+        className={st.container}>
+        <img
+          className={st.image}
+          {...pic.node.picture.responsiveResolution} />
+        <p className={st.legend}>{pic.node.title}</p>
+      </div>
+    ))}
   </Carousel>
 
-// ReactDOM.render(<DemoCarousel />, document.querySelector('.demo-carousel'));
 export default CarouselWidget
