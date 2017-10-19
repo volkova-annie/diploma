@@ -3,7 +3,7 @@
   "plugins": ["react", "compat", "import", "jsx-a11y"],
   "parser": "babel-eslint",
   "parserOptions": {
-    "sourceType": "module",
+    "sourceType": "module"
   },
   "rules": {
     "compat/compat": 2,
@@ -64,7 +64,7 @@
       "beforeSelfClosing": "always",
       "afterOpening": "never"
     }],
-    "react/wrap-multilines": [0],
+    "react/wrap-multilines": [0]
   },
   "env": {
     "browser": true,
