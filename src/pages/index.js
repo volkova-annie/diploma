@@ -18,7 +18,7 @@ const IndexPage = props => {
   return (
     <div>
       <CarouselWidget pictures={slider.edges} />
-      <Actions />
+      <Actions {...props} />
       <h2 className={st.header}>{t({ ru: 'О Кубе', en: 'About Cuba' })}</h2>
       <p className={st.text}>
         {t({

@@ -16,7 +16,7 @@ const Header = props => (
         icon="cuba"
         title="Cuba-bar"
         subtitle="" />
-      <Social />
+      <Social {...props} />
     </div>
     <Navbar {...props} />
   </header>

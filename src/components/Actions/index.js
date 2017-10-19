@@ -4,26 +4,26 @@ import Iconed from '../Iconed'
 import Link from 'gatsby-link'
 import st from './style.module.css'
 
-const Actions = () =>
+const Actions = (props) =>
   <div className={st.actions}>
     <Iconed
       link='https://maps.google.com?q=Cuba+Bar,+Gorohovaya+28'
       icon='place'
-      title='АДРЕС'
-      subtitle='Санкт-Петербург, Гороховая, 28' />
+      title={props.t({ru:'Адрес', en: 'Address'})}
+      subtitle={props.t({ru: 'Санкт-Петербург, Гороховая, 28', en: 'Saint Petersburg, Gorohovaya, 28'})} />
     <Iconed
       link='tel:+79754565585'
       icon='call'
-      title='КОНТАКТНЫЙ ТЕЛЕФОН'
+      title={props.t({ru: 'Телефон', en: 'Phone'})}
       subtitle='+7 (123) 456-78-90' />
     <Iconed
       icon='clock'
-      title='ВРЕМЯ РАБОТЫ'
+      title={props.t({ru: 'Время работы', en: 'Working hours'})}
       subtitle='15:00 - 03:00' />
     <Iconed
       onClick={window.openModal.bind(null, 'Booking')}
       icon='dinner'
-      title='ЗАБРОНИРОВАТЬ СТОЛИК'
+      title={props.t({ru: 'Забронировать столик', en: 'Reserve a table'})}
       subtitle='' />
   </div>
 
