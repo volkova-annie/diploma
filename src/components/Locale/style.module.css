@@ -1,8 +1,8 @@
 @import '../../config.css';
 
 .select {
-  outline-color: var(--color-blue);
+  outline-color: currentColor;
   border: none;
   background-color: transparent;
-  color: var(--color-red);
+  color: inherit;
 }

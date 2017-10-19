@@ -2,13 +2,14 @@
   text-align: center;
   font-size: 1em;
   text-decoration: none;
-  color: #000;
+  color: currentColor;
   cursor: pointer;
 }
 
 .icon {
   width: 20px;
   height: 20px;
+  fill: currentColor;
 }
 
 .iconed_title {

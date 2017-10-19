@@ -10,6 +10,10 @@
   height: 100%;
 }
 
+.link {
+  color: currentColor;
+}
+
 .item {
   width: 40px;
   height: 20px;

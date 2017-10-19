@@ -5,7 +5,9 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin: 0;
+  color: var(--color-red);
+  margin: 0 0 20px;
+  border-bottom: 1px solid currentColor;
 }
 
 .link {
