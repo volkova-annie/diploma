@@ -21,7 +21,6 @@
 
 .text {
   font-size: 0.85em;
-  margin-left: 10%;
-  margin-right: 10%;
   text-align: center;
+  column-count: 2;
 }
