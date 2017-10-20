@@ -20,26 +20,35 @@ const IndexPage = props => {
       <CarouselWidget pictures={slider.edges} />
       <Actions {...props} />
       <h2 className={st.header}>{t({ ru: 'О Кубе', en: 'About Cuba' })}</h2>
-      <p className={st.text}>
-        {t({
-          ru: `Russian Lorem ipsum dolor sit amet, veniam expetenda intellegebat quo et, mel ei nostro volutpat facilisis. Pro eros solet ornatus ea. Mel graecis commune maluisset cu, illum iuvaret principes eam in, an qui nisl justo neglegentur. Cum at mentitum accommodare.
-Et tota falli epicurei per, ea tibique ponderum eam. Usu te causae impedit, idque vitae vis ea. Ne mutat putant habemus cum. Duo bonorum laoreet ex. Veri facilisis accusamus vis ex, ad est cetero audiam democritum. Ea vel admodum accusamus, an vim virtute repudiandae, dico dignissim sit te. Mei putent probatus cu.
-Simul altera nostrud mel et, ex delenit laoreet quo, mundi facilis vivendum vim ex. Qui id commune consulatu urbanitas. Usu cu vocent impetus aliquando, nonumy petentium consequuntur eu eam. Et his primis sensibus torquatos, audire epicuri id per. Ei ius civibus accusata constituam, est et vivendo consetetur.
-Id ius atqui populo, cu saperet suscipit copiosae mei. Vis no debet erant moderatius, augue inermis docendi at mei. Mel autem idque menandri et. Duo dictas alterum at.
-Idque molestiae his ut, an mel corrumpit voluptatum. No pri hendrerit inciderint, eu mazim tempor efficiendi ius. Eu case ferri autem mel, mea lucilius incorrupte neglegentur ut. Ne mel nibh semper latine, vero doming eam ad, iudico melius eu sea. Nam graece dolorem mandamus ea.
-Usu te evertitur vulputate. Eu quaeque efficiantur eos. Cu dolorem iracundia gloriatur quo. Ad augue virtute vel, ius cu dicam animal, cum tota aeque ne.
-Duo ei sale nonumes. Qui ad congue admodum. Utroque laoreet similique ei per, altera scripta admodum qui no, ut aliquam molestie ius. Dolore ubique ei mei. Legere viderer vim et. Eum id voluptatum delicatissimi.
-Ne choro nominati vim. An vix omnes feugiat senserit, eos amet patrioque gubergren ei, laboramus conclusionemque nam et. Nec ad veri doming admodum, suas augue movet vix at, in brute reprehendunt mea. Duo ad brute dicit reprimique, malis consetetur an ius.`,
-          en: `English Lorem ipsum dolor sit amet, veniam expetenda intellegebat quo et, mel ei nostro volutpat facilisis. Pro eros solet ornatus ea. Mel graecis commune maluisset cu, illum iuvaret principes eam in, an qui nisl justo neglegentur. Cum at mentitum accommodare.
-Et tota falli epicurei per, ea tibique ponderum eam. Usu te causae impedit, idque vitae vis ea. Ne mutat putant habemus cum. Duo bonorum laoreet ex. Veri facilisis accusamus vis ex, ad est cetero audiam democritum. Ea vel admodum accusamus, an vim virtute repudiandae, dico dignissim sit te. Mei putent probatus cu.
-Simul altera nostrud mel et, ex delenit laoreet quo, mundi facilis vivendum vim ex. Qui id commune consulatu urbanitas. Usu cu vocent impetus aliquando, nonumy petentium consequuntur eu eam. Et his primis sensibus torquatos, audire epicuri id per. Ei ius civibus accusata constituam, est et vivendo consetetur.
-Id ius atqui populo, cu saperet suscipit copiosae mei. Vis no debet erant moderatius, augue inermis docendi at mei. Mel autem idque menandri et. Duo dictas alterum at.
-Idque molestiae his ut, an mel corrumpit voluptatum. No pri hendrerit inciderint, eu mazim tempor efficiendi ius. Eu case ferri autem mel, mea lucilius incorrupte neglegentur ut. Ne mel nibh semper latine, vero doming eam ad, iudico melius eu sea. Nam graece dolorem mandamus ea.
-Usu te evertitur vulputate. Eu quaeque efficiantur eos. Cu dolorem iracundia gloriatur quo. Ad augue virtute vel, ius cu dicam animal, cum tota aeque ne.
-Duo ei sale nonumes. Qui ad congue admodum. Utroque laoreet similique ei per, altera scripta admodum qui no, ut aliquam molestie ius. Dolore ubique ei mei. Legere viderer vim et. Eum id voluptatum delicatissimi.
-Ne choro nominati vim. An vix omnes feugiat senserit, eos amet patrioque gubergren ei, laboramus conclusionemque nam et. Nec ad veri doming admodum, suas augue movet vix at, in brute reprehendunt mea. Duo ad brute dicit reprimique, malis consetetur an ius.`,
-        })}
-      </p>
+      <p
+        className={st.text}
+        dangerouslySetInnerHTML={{
+          __html: t({
+            ru: `Russian Lorem ipsum dolor sit amet, veniam expetenda intellegebat quo&nbsp;et, mel ei&nbsp;nostro volutpat facilisis. Pro eros solet ornatus&nbsp;ea. Mel graecis commune maluisset&nbsp;cu, illum iuvaret principes eam&nbsp;in, an&nbsp;qui nisl justo neglegentur. Cum at&nbsp;mentitum accommodare.
+Et&nbsp;tota falli epicurei per, ea&nbsp;tibique ponderum eam. Usu te&nbsp;causae impedit, idque vitae vis&nbsp;ea. Ne&nbsp;mutat putant habemus cum. Duo bonorum laoreet&nbsp;ex. Veri facilisis accusamus vis&nbsp;ex, ad&nbsp;est cetero audiam democritum. Ea&nbsp;vel admodum accusamus, an&nbsp;vim virtute repudiandae, dico dignissim sit&nbsp;te. Mei putent probatus&nbsp;cu.
+Simul altera nostrud mel&nbsp;et, ex&nbsp;delenit laoreet quo, mundi facilis vivendum vim&nbsp;ex. Qui id&nbsp;commune consulatu urbanitas. Usu cu&nbsp;vocent impetus aliquando, nonumy petentium consequuntur eu&nbsp;eam. Et&nbsp;his primis sensibus torquatos, audire epicuri id&nbsp;per. Ei&nbsp;ius civibus accusata constituam, est et&nbsp;vivendo consetetur.
+Id&nbsp;ius atqui populo, cu&nbsp;saperet suscipit copiosae mei. Vis no&nbsp;debet erant moderatius, augue inermis docendi at&nbsp;mei. Mel autem idque menandri&nbsp;et. Duo dictas alterum&nbsp;at.
+Idque molestiae his&nbsp;ut, an&nbsp;mel corrumpit voluptatum. No&nbsp;pri hendrerit inciderint, eu&nbsp;mazim tempor efficiendi ius. Eu&nbsp;case ferri autem mel, mea lucilius incorrupte neglegentur&nbsp;ut. Ne&nbsp;mel nibh semper latine, vero doming eam&nbsp;ad, iudico melius eu&nbsp;sea. Nam graece dolorem mandamus&nbsp;ea.
+Usu te&nbsp;evertitur vulputate. Eu&nbsp;quaeque efficiantur eos. Cu&nbsp;dolorem iracundia gloriatur quo. Ad&nbsp;augue virtute vel, ius cu&nbsp;dicam animal, cum tota aeque&nbsp;ne.
+Duo ei&nbsp;sale nonumes. Qui ad&nbsp;congue admodum. Utroque laoreet similique ei&nbsp;per, altera scripta admodum qui&nbsp;no, ut&nbsp;aliquam molestie ius. Dolore ubique ei&nbsp;mei. Legere viderer vim&nbsp;et. Eum id&nbsp;voluptatum delicatissimi.
+Ne&nbsp;choro nominati vim. An&nbsp;vix omnes feugiat senserit, eos amet patrioque gubergren&nbsp;ei, laboramus conclusionemque nam&nbsp;et. Nec ad&nbsp;veri doming admodum, suas augue movet vix&nbsp;at, in&nbsp;brute reprehendunt mea. Duo ad&nbsp;brute dicit reprimique, malis consetetur an&nbsp;ius.`,
+            en: `English Lorem ipsum dolor sit amet, veniam expetenda intellegebat quo&nbsp;et, mel ei&nbsp;nostro volutpat facilisis.
+Pro eros solet ornatus&nbsp;ea. Mel graecis commune maluisset&nbsp;cu, illum iuvaret principes eam&nbsp;in, an&nbsp;qui nisl justo neglegentur.
+Cum at&nbsp;mentitum accommodare. Et&nbsp;tota falli epicurei per, ea&nbsp;tibique ponderum eam.
+Usu te&nbsp;causae impedit, idque vitae vis&nbsp;ea. Ne&nbsp;mutat putant habemus cum. Duo bonorum laoreet&nbsp;ex.
+Veri facilisis accusamus vis&nbsp;ex, ad&nbsp;est cetero audiam democritum. Ea&nbsp;vel admodum accusamus, an&nbsp;vim virtute repudiandae, dico dignissim sit&nbsp;te.
+Mei putent probatus&nbsp;cu. Simul altera nostrud mel&nbsp;et, ex&nbsp;delenit laoreet quo, mundi facilis vivendum vim&nbsp;ex.
+Qui id&nbsp;commune consulatu urbanitas. Usu cu&nbsp;vocent impetus aliquando, nonumy petentium consequuntur eu&nbsp;eam.
+Et&nbsp;his primis sensibus torquatos, audire epicuri id&nbsp;per. Ei&nbsp;ius civibus accusata constituam, est et&nbsp;vivendo consetetur.
+Id&nbsp;ius atqui populo, cu&nbsp;saperet suscipit copiosae mei. Vis no&nbsp;debet erant moderatius, augue inermis docendi at&nbsp;mei.
+Mel autem idque menandri&nbsp;et. Duo dictas alterum&nbsp;at. Idque molestiae his&nbsp;ut, an&nbsp;mel corrumpit voluptatum.
+No&nbsp;pri hendrerit inciderint, eu&nbsp;mazim tempor efficiendi ius. Eu&nbsp;case ferri autem mel, mea lucilius incorrupte neglegentur&nbsp;ut.
+Ne&nbsp;mel nibh semper latine, vero doming eam&nbsp;ad, iudico melius eu&nbsp;sea. Nam graece dolorem mandamus&nbsp;ea.
+Usu te&nbsp;evertitur vulputate. Eu&nbsp;quaeque efficiantur eos. Cu&nbsp;dolorem iracundia gloriatur quo. Ad&nbsp;augue virtute vel, ius cu&nbsp;dicam animal, cum tota aeque&nbsp;ne. Duo ei&nbsp;sale nonumes. Qui ad&nbsp;congue admodum.
+Utroque laoreet similique ei&nbsp;per, altera scripta admodum qui&nbsp;no, ut&nbsp;aliquam molestie ius. Dolore ubique ei&nbsp;mei. Legere viderer vim&nbsp;et. Eum id&nbsp;voluptatum delicatissimi. Ne&nbsp;choro nominati vim. An&nbsp;vix omnes feugiat senserit, eos amet patrioque gubergren&nbsp;ei, laboramus conclusionemque nam&nbsp;et.
+Nec ad&nbsp;veri doming admodum, suas augue movet vix&nbsp;at, in&nbsp;brute reprehendunt mea. Duo ad&nbsp;brute dicit reprimique, malis consetetur an&nbsp;ius.`,
+          }),
+        }} />
       <h2 className={st.header}>{t({ ru: 'События', en: 'Events' })}</h2>
       <p className={st.subtitle}>
         {t({ ru: 'Приходите к нам у нас весело и вкусно!', en: 'Come to us we have fun and delicious!' })}
