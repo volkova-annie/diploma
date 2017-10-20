@@ -1,11 +1,13 @@
+@import '../../config.css';
+
 .actions {
-  font-size: .8rem;
+  font-size: 0.8rem;
   width: 100%;
   margin: 30px auto;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #eee;
-
+  color: var(--color-blue);
 }
 
 .social_title {

@@ -1,3 +1,5 @@
+@import '../../config.css';
+
 .iconed {
   text-align: center;
   font-size: 1em;
@@ -15,8 +17,7 @@
 .iconed_title {
   font-weight: bold;
   margin-bottom: 0;
-}
-
-.iconed_text {
-  font-style: italic;
+  font-family: var(--font-headings);
+  font-size: 18px;
+  color: currentColor;
 }
