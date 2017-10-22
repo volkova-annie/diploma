@@ -8,7 +8,7 @@ const Iconed = props => {
   if (props.link) {
     return (
       <a
-        className={cn(props.className, st.iconed)}
+        className={cn(props.className, st.iconed, st.action)}
         href={props.link}
         target="_blank">
         <Icon
@@ -22,7 +22,7 @@ const Iconed = props => {
     return (
       <span
         onClick={props.onClick}
-        className={cn(props.className, st.iconed)}>
+        className={cn(props.className, st.iconed, {[st.action]: !!props.onClick})}>
         <Icon
           className={st.icon}
           icon={props.icon} />
