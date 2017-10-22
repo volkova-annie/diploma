@@ -51,6 +51,7 @@ class Modals extends Component {
         const Comp = modals[name]
 
         return <Comp
+          {...this.props}
           closeModal={this.closeModal}
           openModal={this.openModal}
           shown={this.state.modalsStates[name]}
