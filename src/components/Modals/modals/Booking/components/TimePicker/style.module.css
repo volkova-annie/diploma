@@ -1,0 +1,29 @@
+.timepicker {
+  display: flex;
+  flex-flow: column wrap;
+  margin-top: 0.5rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: scroll;
+  height: 40px;
+}
+
+.time {
+  width: 25%;
+  color: #222d5b;
+  background-color: #fff;
+  box-sizing: border-box;
+  outline-color: currentColor;
+  border-style: outset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  padding: 2px 0;
+}
+
+@media (max-width: 1023px) {
+  .title {
+    font-size: 1.2rem;
+  }
+}
