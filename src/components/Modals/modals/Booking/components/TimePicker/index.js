@@ -47,11 +47,17 @@ class TimePicker extends Component {
   render() {
     const {time, times} = this.state
 
-    return <div className={st.timepicker}>{times.map(time => <button
-      className={st.time}
-      name={time}
-      key={time}
-      type='button'>{time}</button>)}</div>
+    return <div className={st.timepicker}>{times.map(time =>
+      <label key={time}>
+        <input
+          type='radio'
+          className={st.time}
+          name='time'
+          value={time} />
+        <span>{time}</span>
+      </label>
+    )}
+    </div>
   }
 }
 

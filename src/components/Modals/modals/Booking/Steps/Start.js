@@ -14,7 +14,7 @@ class Start extends Component {
     const data = {}
     const whiteList = [
       'date',
-      // 'time',
+      'time',
       'name',
       'phone',
       'guests',
