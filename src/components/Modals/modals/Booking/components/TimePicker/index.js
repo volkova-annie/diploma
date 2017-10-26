@@ -48,7 +48,9 @@ class TimePicker extends Component {
     const {time, times} = this.state
 
     return <div className={st.timepicker}>{times.map(time =>
-      <label key={time}>
+      <label
+        key={time}
+        className={st.label}>
         <input
           type='radio'
           className={st.time}
