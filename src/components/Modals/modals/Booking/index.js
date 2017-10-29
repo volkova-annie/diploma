@@ -17,8 +17,10 @@ class Booking extends Component {
       {...this.props}
       name='Booking'
       className={st.booking}>
-      <h2>Бронирование столика</h2>
-      <Current {...this.state} />
+      <h2 className={st.title}>{this.props.t({ru: 'Бронирование столика', en: 'Reserve a table'})}</h2>
+      <Current
+        {...this.props}
+        {...this.state} />
     </Modal>
   }
 }

@@ -9,31 +9,77 @@ import st from './style.module.css'
 class Start extends Component {
   state = {value: 1}
 
+  sendForm = (event) => {
+    event.preventDefault()
+    const data = {}
+    const whiteList = [
+      'date',
+      'time',
+      'name',
+      'phone',
+      'guests',
+      'comments',
+    ]
+
+    const form = event.target
+    const elements = form.elements
+
+    whiteList.forEach(name => {
+      data[name] = elements[name].value
+    })
+  }
+
   render() {
     return <div className={st.start}>
-      <form>
-        <h3>Дата и время</h3>
-        <input
-          type='date' />
-        <TimePicker />
-        <h3>Количество гостей</h3>
-        <InputRange
-          maxValue={6}
-          minValue={1}
-          value={this.state.value}
-          onChange={value => this.setState({value})} />
 
-        <h3>Информацмя о гостях</h3>
-        <input
-          type='text'
-          placeholder='Как вас зовут' />
+      <form
+        onSubmit={this.sendForm}
+        className={st.form}>
+        <div className={st.date}>
+          <label className={st.label}>{this.props.t({ru:'Дата и время', en:'Date and time'})}
+            <input
+              name='date'
+              className={st.date_input}
+              type='date' />
+          </label>
+          <TimePicker {...this.props} />
+        </div>
+        <div className={st.slider}>
+          <label className={st.label}>{this.props.t({ru:'Количество гостей', en:'Number of guests'})}
+            <InputRange
+              name='guests'
+              maxValue={6}
+              minValue={1}
+              value={this.state.value}
+              onChange={value => this.setState({value})} />
+          </label>
+        </div>
+        <div className={st.guests}>
+          <label className={st.label}>{this.props.t({ru:'Информация о гостях', en:'Information about guests'})}
+            <div className={st.contact_input}>
+              <input
+                name='name'
+                className={st.name}
+                type='text'
+                placeholder={this.props.t({ru:'Как вас зовут', en:'Your name'})} />
+              <input
+                name='phone'
+                className={st.phone}
+                type='tel'
+                placeholder={this.props.t({ru:'Телефон', en:'Phone number'})} />
+            </div>
+          </label>
 
-        <input
-          type='tel'
-          placeholder='Телефон' />
-
-        <textarea placeholder='Пожелания (необязательно)'></textarea>
-        <button type='submit'>Забронировать</button>
+          <textarea
+            name='comments'
+            className={st.textarea}
+            placeholder={this.props.t({ru:'Пожелания (необязательно)', en:'Comments (optional)'})}>
+          </textarea>
+        </div>
+        <button
+          className={st.button}
+          type='submit'>{this.props.t({ru:'Забронировать', en:'Reserve'})}
+        </button>
       </form>
     </div>
   }

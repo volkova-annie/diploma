@@ -1,0 +1,37 @@
+@import '../../../../../../config.css';
+
+.timepicker {
+  display: flex;
+  flex-flow: column wrap;
+  margin-top: 0.5rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: scroll;
+  height: 40px;
+}
+
+.time {
+  visibility: hidden;
+  color: #222d5b;
+  outline-color: currentColor;
+  border-style: outset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  padding: 2px 0;
+  box-sizing: border-box;
+}
+
+.label {
+  display: flex;
+  width: 25%;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1023px) {
+  .title {
+    font-size: 1.2rem;
+  }
+}
