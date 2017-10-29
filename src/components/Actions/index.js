@@ -21,7 +21,8 @@ const Actions = (props) =>
       title={props.t({ru: 'Время работы', en: 'Working hours'})}
       subtitle='15:00 - 03:00' />
     <Iconed
-      onClick={window.openModal.bind(null, 'Booking')}
+      className='disabled'
+      onClick={typeof window !== 'undefined' ? window.openModal.bind(null, 'Booking') : null}
       icon='dinner'
       title={props.t({ru: 'Забронировать столик', en: 'Reserve a table'})}
       subtitle='' />

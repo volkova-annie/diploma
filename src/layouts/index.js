@@ -17,13 +17,8 @@ import './style.css'
  */
 
 class TemplateWrapper extends Component {
-  state = { locale: this.getDefaultLocale('ru', ['ru', 'en']), locales: ['ru', 'en'] }
-  getDefaultLocale(def, locales) {
-    const lang = navigator.language.split('-')[0]
-    const locale = locales.includes(lang) ? lang : def
+  state = { locale: 'ru', locales: ['ru', 'en'] }
 
-    return locale
-  }
   switchLocale = locale => {
     this.setState({ locale })
   }

@@ -12,8 +12,10 @@ class Modals extends Component {
 
     modalsNames.forEach(name => {modalsStates[name] = false})
 
-    window.openModal = this.openModal
-    window.closeModal = this.closeModal
+    if (typeof window !== 'undefined') {
+      window.closeModal = this.closeModal
+      window.openModal = this.openModal
+    }
 
     this.state = {
       modalsNames,
