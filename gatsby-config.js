@@ -5,7 +5,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    // 'gatsby-plugin-preact',
+    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-source-contentful',
       options: {
