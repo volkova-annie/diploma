@@ -50,13 +50,15 @@ class TimePicker extends Component {
     return <div className={st.timepicker}>{times.map(time =>
       <label
         key={time}
+        htmlFor={`time-input-${time}`}
         className={st.label}>
         <input
+          id={`time-input-${time}`}
           type='radio'
           className={st.time}
           name='time'
           value={time} />
-        <span>{time}</span>
+        <span className={st.time_visual}>{time}</span>
       </label>
     )}
     </div>
