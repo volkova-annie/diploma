@@ -5,29 +5,31 @@ import st from './style.module.css'
 import { Sprite, Icon } from '../SVGIcon'
 
 const Iconed = props => {
-  if (props.link) {
+  const {title, subtitle, icon, className, onClick, link} = props
+
+  if (link) {
     return (
       <a
-        className={cn(props.className, st.iconed, st.action)}
-        href={props.link}
+        className={cn(className, st.iconed, st.action)}
+        href={link}
         target="_blank">
         <Icon
           className={st.icon}
-          icon={props.icon} />
-        {props.title && <p className={st.iconed_title}>{props.title}</p>}
-        {props.subtitle && <p className={st.iconed_text}>{props.subtitle}</p>}
+          icon={icon} />
+        {title && <p className={st.iconed_title}>{title}</p>}
+        {subtitle && <p className={st.iconed_text}>{subtitle}</p>}
       </a>
     )
   } else {
     return (
       <span
-        onClick={props.onClick}
-        className={cn(props.className, st.iconed, {[st.action]: !!props.onClick})}>
+        onClick={onClick}
+        className={cn(className, st.iconed, {[st.action]: !!onClick})}>
         <Icon
           className={st.icon}
-          icon={props.icon} />
-        {props.title && <p className={st.iconed_title}>{props.title}</p>}
-        {props.subtitle && <p className={st.iconed_text}>{props.subtitle}</p>}
+          icon={icon} />
+        {title && <p className={st.iconed_title}>{title}</p>}
+        {subtitle && <p className={st.iconed_text}>{subtitle}</p>}
       </span>
     )
   }

@@ -32,10 +32,29 @@
 
 .image {
   min-height: 100%;
+  object-fit: contain;
 }
 
 .legend {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+@media (max-width: 1279px) {
+  .carousel {
+    height: 31.25vw;
+
+    & :global(.carousel.carousel-slider) {
+      height: 31.25vw;
+    }
+
+    & :global(.slider-wrapper) {
+      height: 31.25vw;
+    }
+
+    & :global(.slide) {
+      height: 31.25vw;
+    }
+  }
 }

@@ -7,7 +7,7 @@ import st from './style.module.css'
 
 const Footer = props => (
   <footer className={st.footer}>
-    <Actions {...props} />
+    {false && <Actions {...props} />}
     <div className={st.bottom}>
       <h2 className={st.social_title}>{props.t({ ru: 'Социальные сети', en: 'Social networks' })}</h2>
       <Social
