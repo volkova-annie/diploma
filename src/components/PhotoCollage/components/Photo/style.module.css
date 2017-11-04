@@ -1,0 +1,77 @@
+@import '../../../../config.css';
+
+:root {
+  --photo-width: 300px;
+}
+
+.photo {
+  width: var(--photo-width);
+  max-width: 25%;
+  background: var(--color-white);
+  padding: 1rem 1rem 1.25rem;
+  position: relative;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.15));
+  box-sizing: border-box;
+}
+
+.image_wrapper {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.image {
+  width: calc(var(--photo-width) - 2rem);
+  height: calc(var(--photo-width) - 2rem);
+  object-fit: cover;
+  margin: 0;
+}
+
+.title {
+  color: var(--color-blue);
+  font-family: var(--font-headings);
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.date_time {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  bottom: 0;
+  line-height: 1;
+  width: calc(100% - 2rem);
+  height: 1.75rem;
+  right: 1rem;
+  font-size: 0.75rem;
+  color: var(--color-red);
+  font-family: var(--font-headings);
+}
+
+@media (max-width: 1023px) {
+  .photo {
+    max-width: 50%;
+  }
+
+  .image {
+    width: calc(((100vw - 8rem) / 2) - 2rem);
+    height: calc(((100vw - 8rem) / 2) - 2rem);
+  }
+}
+
+@media (max-width: 767px) {
+  .photo {
+    width: 100%;
+    max-width: 100%;
+
+    & + & {
+      margin-top: 3rem;
+    }
+  }
+
+  .image {
+    width: calc((100vw - 4rem) - 2rem);
+    height: calc((100vw - 4rem) - 2rem);
+  }
+}

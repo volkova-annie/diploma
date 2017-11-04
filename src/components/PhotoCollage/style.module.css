@@ -1,0 +1,21 @@
+.collage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: calc(100vw - 14rem);
+  margin: 0 calc(-1 * (100vw - 100% - 14rem) / 2);
+}
+
+@media (max-width: 1023px) {
+  .collage {
+    width: calc(100vw - 4rem);
+    margin: 0 calc(-1 * (100vw - 100% - 4rem) / 2);
+  }
+}
+
+@media (max-width: 767px) {
+  .collage {
+    width: calc(100vw - 4rem);
+    margin: 0 calc(-1 * (100vw - 100% - 4rem) / 2);
+  }
+}
