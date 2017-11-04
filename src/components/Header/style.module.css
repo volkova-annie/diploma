@@ -12,6 +12,14 @@
   display: flex;
   align-items: center;
   align-content: center;
+
+  .first {
+    text-align: left;
+  }
+
+  .last {
+    text-align: right;
+  }
 }
 
 .top {
@@ -66,4 +74,49 @@
 }
 
 @media (max-width: 767px) {
+  .header {
+    margin-top: 0;
+  }
+
+  .last {
+    height: 50px;
+    text-align: right;
+    justify-content: flex-end;
+    order: 1;
+  }
+
+  .first {
+    text-align: left;
+    justify-content: flex-start;
+    order: 0;
+    flex-grow: 1;
+    white-space: nowrap;
+  }
+
+  .logo_wrapper {
+    order: 2;
+    min-width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .top {
+    padding: 0 16px;
+    margin-bottom: 1em;
+    flex-flow: wrap row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+
+  .social {
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+  }
 }

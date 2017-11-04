@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import cn from 'classnames'
 import Navbar from '../Navbar'
 import Social from '../Social'
 import Locale from '../Locale'
@@ -9,9 +10,7 @@ import st from './style.module.css'
 const Header = props => (
   <header className={st.header}>
     <div className={st.top}>
-      <div
-        className={st.fill}
-        style={{ textAlign: 'left' }}>
+      <div className={cn(st.fill, st.first)}>
         <a
           className={st.phone}
           href="tel:+79211233456">
@@ -22,15 +21,15 @@ const Header = props => (
         </a>
       </div>
 
-      <Link to="/">
+      <Link
+        className={st.logo_wrapper}
+        to="/">
         <Iconed
           className={st.logo}
           icon="logo" />
       </Link>
 
-      <div
-        className={st.fill}
-        style={{ textAlign: 'right' }}>
+      <div className={cn(st.fill, st.last)}>
         <Social
           className={st.social}
           {...props} />
