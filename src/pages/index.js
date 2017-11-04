@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import CarouselWidget from '../components/CarouselWidget'
 import Actions from '../components/Actions'
 import { transformLocales } from '../modules/locales'
-import Collage from '../components/Collage'
+import PhotoCollage from '../components/PhotoCollage'
 import Poster from '../components/Poster'
 import st from './style.module.css'
 
@@ -12,14 +12,14 @@ const leftPad = require('left-pad')
 const IndexPage = props => {
   const localesData = transformLocales(props.data, props.locales)
   const currentLocale = props.locale
-  const { events, menu, gallery, slider } = localesData[currentLocale]
+  const { events, menu, slider } = localesData[currentLocale]
   const { t } = props
 
   return (
     <div>
       <CarouselWidget pictures={slider.edges} />
       <Actions {...props} />
-      <h2 className={st.header}>{t({ ru: 'О Кубе', en: 'About Cuba' })}</h2>
+      <h2 className={st.heading}>{t({ ru: 'О Кубе', en: 'About Cuba' })}</h2>
       <p
         className={st.text}
         dangerouslySetInnerHTML={{
@@ -49,16 +49,21 @@ Utroque laoreet similique ei&nbsp;per, altera scripta admodum qui&nbsp;no, ut&nb
 Nec ad&nbsp;veri doming admodum, suas augue movet vix&nbsp;at, in&nbsp;brute reprehendunt mea. Duo ad&nbsp;brute dicit reprimique, malis consetetur an&nbsp;ius.`,
           }),
         }} />
-      <h2 className={st.header}>{t({ ru: 'События', en: 'Events' })}</h2>
-      <p className={st.subtitle}>
-        {t({ ru: 'Приходите к нам у нас весело и вкусно!', en: 'Come to us we have fun and delicious!' })}
-      </p>
-      <Collage items={events.edges} />
-      <h2 className={st.header}>{t({ ru: 'Меню', en: 'Menu' })}</h2>
-      <p className={st.subtitle}>
-        {t({ ru: 'Приходите к нам у нас весело и вкусно!', en: 'Come to us we have fun and delicious!' })}
-      </p>
-      <Collage items={menu.edges} />
+      <section className={st.section}>
+        <h2 className={st.heading}>{t({ ru: 'Зажигательные Вечеринки', en: 'The Hottest Parties' })}</h2>
+        <p className={st.section_description}>
+          Mauris finibus cursus justo, sit amet eleifend libero gravida eget. Aliquam lobortis, tortor ut lobortis bibendum, urna ante tristique odio, vel vestibulum turpis dolor non libero.
+        </p>
+        <PhotoCollage items={events.edges} />
+      </section>
+
+      <section className={st.section}>
+        <h2 className={st.heading}>{t({ ru: 'Вкуснейшие Блюда', en: 'Delicious dishes' })}</h2>
+        <p className={st.section_description}>
+          Donec vel euismod mi. Phasellus ultricies ex vitae lobortis posuere. Vivamus et augue sodales, cursus nunc ac, porta tellus. Cras quis sem vel enim sagittis feugiat.
+        </p>
+        <PhotoCollage items={menu.edges} />
+      </section>
     </div>
   )
 }
@@ -67,7 +72,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexQuery {
-    ruEvents: allContentfulEvents(limit: 6, filter: { node_locale: { eq: "ru" } }) {
+    ruEvents: allContentfulEvents(limit: 4, filter: { node_locale: { eq: "ru" } }) {
       edges {
         node {
           id
@@ -78,7 +83,7 @@ export const pageQuery = graphql`
           }
           type
           image {
-            responsiveResolution(width: 200) {
+            responsiveResolution(width: 300) {
               src
               srcSet
               height
@@ -88,7 +93,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    enEvents: allContentfulEvents(limit: 6, filter: { node_locale: { eq: "en" } }) {
+    enEvents: allContentfulEvents(limit: 4, filter: { node_locale: { eq: "en" } }) {
       edges {
         node {
           id
@@ -99,7 +104,7 @@ export const pageQuery = graphql`
           }
           type
           image {
-            responsiveResolution(width: 200) {
+            responsiveResolution(width: 300) {
               src
               srcSet
               height
@@ -109,7 +114,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    ruMenu: allContentfulMenu(filter: { node_locale: { eq: "ru" } }) {
+    ruMenu: allContentfulMenu(limit: 4, filter: { node_locale: { eq: "ru" } }) {
       edges {
         node {
           id
@@ -119,7 +124,7 @@ export const pageQuery = graphql`
           }
           price
           image {
-            responsiveResolution(width: 200) {
+            responsiveResolution(width: 300) {
               src
               srcSet
               height
@@ -129,7 +134,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    enMenu: allContentfulMenu(filter: { node_locale: { eq: "en" } }) {
+    enMenu: allContentfulMenu(limit: 4, filter: { node_locale: { eq: "en" } }) {
       edges {
         node {
           id
@@ -139,41 +144,7 @@ export const pageQuery = graphql`
           }
           price
           image {
-            responsiveResolution(width: 200) {
-              src
-              srcSet
-              height
-              width
-            }
-          }
-        }
-      }
-    }
-    ruGallery: allContentfulGallery(filter: { node_locale: { eq: "ru" } }) {
-      edges {
-        node {
-          id
-          title
-          type
-          image {
-            responsiveResolution(height: 200) {
-              src
-              srcSet
-              height
-              width
-            }
-          }
-        }
-      }
-    }
-    enGallery: allContentfulGallery(filter: { node_locale: { eq: "en" } }) {
-      edges {
-        node {
-          id
-          title
-          type
-          image {
-            responsiveResolution(height: 200) {
+            responsiveResolution(width: 300) {
               src
               srcSet
               height

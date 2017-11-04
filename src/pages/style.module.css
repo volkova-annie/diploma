@@ -1,15 +1,23 @@
-.header {
+@import '../config.css';
+
+.heading {
   text-align: center;
   text-transform: uppercase;
   font-weight: 500;
-  margin-bottom: 0.8em;
+  margin-bottom: 1rem;
 }
 
-.header:after {
-  content: '—';
-  display: block;
-  font-weight: 100;
-  margin-top: 0.8em;
+.section_description {
+  width: (100% - 4rem);
+  max-width: 768px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  color: var(--color-blue);
+}
+
+.section {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .subtitle {
@@ -20,4 +28,27 @@
 .text {
   text-align: center;
   column-count: 2;
+  color: var(--color-blue);
+}
+
+@media (max-width: 1023px) {
+  .section_description {
+    width: calc(100% - 4rem);
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .section_description {
+    width: calc(100% - 2rem);
+    max-width: 100%;
+  }
+
+  .text {
+    width: calc(100% - 2rem);
+    max-width: 100%;
+    margin: 0 auto;
+    column-count: 1;
+    color: var(--color-blue);
+  }
 }
