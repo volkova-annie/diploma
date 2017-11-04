@@ -29,12 +29,14 @@
 }
 
 .logo {
-  background-image: url('//ucarecdn.com/f5b33116-7a4d-4864-bc97-6982f20c696b/logo_cuba.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  display: block;
   width: 100px;
   height: 100px;
+
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .phone {

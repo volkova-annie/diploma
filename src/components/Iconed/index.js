@@ -14,8 +14,8 @@ const Iconed = props => {
         <Icon
           className={st.icon}
           icon={props.icon} />
-        <p className={st.iconed_title}>{props.title}</p>
-        <p className={st.iconed_text}>{props.subtitle}</p>
+        {props.title && <p className={st.iconed_title}>{props.title}</p>}
+        {props.subtitle && <p className={st.iconed_text}>{props.subtitle}</p>}
       </a>
     )
   } else {
@@ -26,8 +26,8 @@ const Iconed = props => {
         <Icon
           className={st.icon}
           icon={props.icon} />
-        <p className={st.iconed_title}>{props.title}</p>
-        <p className={st.iconed_text}>{props.subtitle}</p>
+        {props.title && <p className={st.iconed_title}>{props.title}</p>}
+        {props.subtitle && <p className={st.iconed_text}>{props.subtitle}</p>}
       </span>
     )
   }

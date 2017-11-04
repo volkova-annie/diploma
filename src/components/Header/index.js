@@ -22,9 +22,11 @@ const Header = props => (
         </a>
       </div>
 
-      <Link
-        to="/"
-        className={st.logo} />
+      <Link to="/">
+        <Iconed
+          className={st.logo}
+          icon="logo" />
+      </Link>
 
       <div
         className={st.fill}
