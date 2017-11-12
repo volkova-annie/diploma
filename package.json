@@ -24,7 +24,6 @@
     "develop": "gatsby develop",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
-    "test": "jest",
     "lint": "eslint ./src & stylelint \"./src/{components,css}/*.css\" & remark .",
     "precommit": "lint-staged"
   },
