@@ -1,0 +1,12 @@
+.tile {
+  background-color: #fff;
+  text-align: center;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.price {
+  display: block;
+}

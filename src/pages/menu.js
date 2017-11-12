@@ -1,18 +1,36 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import cn from 'classnames'
+import Page, { PageLayout } from '../components/Page'
+import PageGrid from '../components/PageGrid'
+import MenuTile from '../components/MenuTile'
+import st from './style.module.css'
 
-const MenuPage = (props) => {
-  const {data: {ru}} = props
+class MenuPage extends Page {
+  itemRenderer = ({node}) => <MenuTile
+    {...node}
+    t={this.t}
+    locale={this.state.locale} />
 
-  return <div>
-    <h1>Menu</h1>
-    <Link to="/">Go to index</Link>
-    {ru.edges.map((edge) => {
-      const {node} = edge
+  render() {
+    const t = this.t
+    const currentLocale = this.state.locale
+    const {data} = this.props
+    const events = [...data[currentLocale].edges]
+      .concat([...data[currentLocale].edges])
+      .concat([...data[currentLocale].edges])
+      .concat([...data[currentLocale].edges])
 
-      return <div key={node.id}>{node.title}</div>
-    })}
-  </div>
+    return <PageLayout
+      t={t}
+      switchLocale={this.switchLocale}
+      {...this.state}
+      {...this.props}>
+      <PageGrid
+        renderer={this.itemRenderer}
+        items={events} />
+    </PageLayout>
+  }
 }
 
 export default MenuPage
@@ -30,7 +48,7 @@ export const pageQuery = graphql`
           }
           price
           image {
-            responsiveResolution(width: 100) {
+            responsiveResolution(width: 640) {
               src
               srcSet
               height
@@ -50,7 +68,7 @@ export const pageQuery = graphql`
           }
           price
           image {
-            responsiveResolution(width: 100) {
+            responsiveResolution(width: 640) {
               src
               srcSet
               height
