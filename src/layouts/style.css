@@ -37,6 +37,7 @@ template {
 }
 
 a {
+  color: var(--color-red);
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
@@ -232,7 +233,7 @@ html {
 }
 
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  color: var(--color-blue);
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -314,10 +315,9 @@ hgroup {
 }
 
 ul {
-  margin: 0 0 1.45rem 1.45rem;
+  margin: 0;
   padding: 0;
-  list-style-position: outside;
-  list-style-image: none;
+  list-style: none;
 }
 
 ol {
