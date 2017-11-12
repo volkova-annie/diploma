@@ -96,7 +96,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexQuery {
-    ruEvents: allContentfulEvents(limit: 4, filter: { node_locale: { eq: "ru" } }) {
+    ruEvents: allContentfulEvents(limit: 4, sort: {fields: [date]}, filter: { node_locale: { eq: "ru" } }) {
       edges {
         node {
           id
@@ -117,7 +117,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    enEvents: allContentfulEvents(limit: 4, filter: { node_locale: { eq: "en" } }) {
+    enEvents: allContentfulEvents(limit: 4, sort: {fields: [date]}, filter: { node_locale: { eq: "en" } }) {
       edges {
         node {
           id
