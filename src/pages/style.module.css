@@ -18,6 +18,11 @@
 .section {
   margin-top: 4rem;
   margin-bottom: 4rem;
+
+  &.is_centered {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .subtitle {
@@ -50,5 +55,20 @@
     margin: 0 auto;
     column-count: 1;
     color: var(--color-blue);
+  }
+}
+
+@media (max-width: 479px) {
+  .contacts {
+    flex-direction: column;
+
+    & .contacts_column:first-child {
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+
+    & .address_text {
+      margin-bottom: 0;
+    }
   }
 }
