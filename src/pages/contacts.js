@@ -3,8 +3,6 @@ import Link from 'gatsby-link'
 import cn from 'classnames'
 import Page, { PageLayout } from '../components/Page'
 import GoogleMap from '../components/GoogleMap'
-import Actions from '../components/Actions'
-import { transformLocales } from '../modules/locales'
 import st from './style.module.css'
 
 
