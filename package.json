@@ -2,7 +2,7 @@
   "name": "cuba-site",
   "description": "Cuba site client",
   "version": "1.0.0",
-  "author": "Alexander Kurganov <me@akurganow.ru>",
+  "author": "Annie",
   "dependencies": {
     "classnames": "^2.2.5",
     "gatsby": "^1.8.13",
