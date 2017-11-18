@@ -27,6 +27,7 @@ const PhotoCollage = ({items, props}) => {
         : null
 
       return <Photo
+        className={st.photo}
         isEven={isEven}
         deg={deg}
         image={node.image}

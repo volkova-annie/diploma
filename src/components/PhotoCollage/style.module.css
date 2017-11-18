@@ -6,16 +6,27 @@
   margin: 0 calc(-1 * (100vw - 100% - 14rem) / 2);
 }
 
-@media (max-width: 1023px) {
+.photo {
+  position: relative;
+  z-index: 1;
+  transition: transform 150ms ease;
+
+  &:hover {
+    z-index: 9;
+    transform: scale(1.2) rotate(0) !important;
+  }
+}
+
+@media (max-width: 1279px) {
   .collage {
     width: calc(100vw - 4rem);
     margin: 0 calc(-1 * (100vw - 100% - 4rem) / 2);
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .collage {
-    width: calc(100vw - 4rem);
-    margin: 0 calc(-1 * (100vw - 100% - 4rem) / 2);
+    width: calc(100vw - 8rem);
+    margin: 0 calc(-1 * (100vw - 100% - 8rem) / 2);
   }
 }

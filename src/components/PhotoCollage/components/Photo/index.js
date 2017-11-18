@@ -8,7 +8,7 @@ const Photo = (props) => {
 
   return <div
     style={{transform: `rotate(${deg}deg)`}}
-    className={st.photo}>
+    className={cn(st.photo, props.className)}>
     <div className={st.image_wrapper}>
       <img
         className={st.image}
