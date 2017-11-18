@@ -1,4 +1,5 @@
 import React from 'react'
+import cn from 'classnames'
 import st from './style.module.css'
 
 const PageGrid = ({items, renderer}) =>
@@ -6,7 +7,7 @@ const PageGrid = ({items, renderer}) =>
     {items.map((item, index) =>
       <li
         key={`${item.id}${index}`}
-        className={st.item}>
+        className={cn(st.item, {'firstline': index < 2})}>
         {renderer(item)}
       </li>
     )}
