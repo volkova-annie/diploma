@@ -8,14 +8,18 @@ const MenuTile = props => {
 
   return (
     <div className={st.tile}>
-      <div className={st.image}>
-        <img
-          srcSet={props.image.responsiveResolution.srcSet}
-          src={props.image.responsiveResolution.src} />
+      {props.image.responsiveResolution && (
+        <div className={st.image_container}>
+          <img
+            srcSet={props.image.responsiveResolution.srcSet}
+            src={props.image.responsiveResolution.src} />
+        </div>
+      )}
+      {!props.image.responsiveResolution && <div className={st.image_placeholder} />}
+      <div className={st.info}>
+        <span className={st.title}>{props.title}</span>
+        <span className={st.price}>{t({ ru: `${props.price} руб.`, en: `${props.price} rub` })}</span>
       </div>
-      <span className={st.title}>{props.title}</span>
-      <span className={st.price}>{t({ ru: `${props.price} руб.`, en: `${props.price} rub` })}</span>
-
     </div>
   )
 }
