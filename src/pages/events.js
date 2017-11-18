@@ -10,17 +10,14 @@ import st from './style.module.css'
 class EventsPage extends Component {
   itemRenderer = ({node}) => <EventTile
     {...node}
-    t={this.t}
-    locale={this.state.locale} />
+    t={this.props.actions.translate}
+    locale={this.props.locale} />
 
   render() {
     const t = this.props.actions.translate
     const currentLocale = this.props.locale
     const {data} = this.props
-    const events = [...data[currentLocale].edges]
-      .concat([...data[currentLocale].edges])
-      .concat([...data[currentLocale].edges])
-      .concat([...data[currentLocale].edges])
+    const events = data[currentLocale].edges
 
     return <PageLayout
       {...this.state}

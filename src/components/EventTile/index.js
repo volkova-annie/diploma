@@ -10,12 +10,15 @@ const EventTile = props => {
 
   return (
     <div className={st.tile}>
-      <div className={st.image_container}>
-        <img
-          className={st.image}
-          srcSet={props.image.responsiveResolution.srcSet}
-          src={props.image.responsiveResolution.src} />
-      </div>
+      {props.image.responsiveResolution && (
+        <div className={st.image_container}>
+          <img
+            className={st.image}
+            srcSet={props.image.responsiveResolution.srcSet}
+            src={props.image.responsiveResolution.src} />
+        </div>
+      )}
+      {!props.image.responsiveResolution && <div className={st.image_placeholder} />}
       <div className={st.info}>
         <span className={st.time}>
           {t({

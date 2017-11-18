@@ -16,7 +16,11 @@
   width: 100%;
   height: calc(((1280px / 4) - 16px) / 4 * 3);
   overflow: hidden;
+}
 
+.image_placeholder {
+  background-color: #fff;
+  flex-grow: 1;
 }
 
 :global(.firstline) .image_container {
