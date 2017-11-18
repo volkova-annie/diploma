@@ -4,9 +4,11 @@ import st from './style.module.css'
 import Photo from './components/Photo'
 const leftPad = require('left-pad')
 
-const PhotoCollage = ({items, props}) =>
-  <div className={st.collage}>
-    {items.map((edge, index) => {
+const PhotoCollage = ({items, props}) => {
+  const filteredItems = items.filter(item => !!item.node.image.responsiveResolution)
+
+  return <div className={st.collage}>
+    {filteredItems.map((edge, index) => {
       const isEven = index % 2 === 0
       const deg = (Math.random() * 15).toFixed()
       const {node} = edge
@@ -36,5 +38,6 @@ const PhotoCollage = ({items, props}) =>
         key={node.id} />
     })}
   </div>
+}
 
 export default PhotoCollage
