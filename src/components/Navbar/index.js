@@ -4,7 +4,7 @@ import st from './style.module.css'
 import Locale from '../Locale'
 
 const Navbar = props => {
-  const { t } = props
+  const t = props.actions.translate
   const links = [
     {
       to: '/events',

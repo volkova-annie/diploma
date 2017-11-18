@@ -1,20 +1,21 @@
-import React from 'react'
+import React, {Component} from 'react'
 import Link from 'gatsby-link'
 import cn from 'classnames'
-import Page, { PageLayout } from '../components/Page'
+import {connectComponent} from '../state/connectComponent'
+import PageLayout from '../components/PageLayout'
 import PageGrid from '../components/PageGrid'
 import EventTile from '../components/EventTile'
 import st from './style.module.css'
 
-class EventsPage extends Page {
+class EventsPage extends Component {
   itemRenderer = ({node}) => <EventTile
     {...node}
     t={this.t}
     locale={this.state.locale} />
 
   render() {
-    const t = this.t
-    const currentLocale = this.state.locale
+    const t = this.props.actions.translate
+    const currentLocale = this.props.locale
     const {data} = this.props
     const events = [...data[currentLocale].edges]
       .concat([...data[currentLocale].edges])
@@ -22,8 +23,6 @@ class EventsPage extends Page {
       .concat([...data[currentLocale].edges])
 
     return <PageLayout
-      t={t}
-      switchLocale={this.switchLocale}
       {...this.state}
       {...this.props}>
       <PageGrid
@@ -33,7 +32,7 @@ class EventsPage extends Page {
   }
 }
 
-export default EventsPage
+export default connectComponent(EventsPage)
 
 export const pageQuery = graphql`
   query EventsQuery {

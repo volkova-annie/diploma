@@ -8,6 +8,6 @@ import './style.css'
  * BG: https://ucarecdn.com/b81554c4-81f6-43bc-9e11-521d89c40427/-/preview/-/format/auto/
  */
 
-const TemplateWrapper = (props) => props.children()
+const TemplateWrapper = props => props.children()
 
 export default TemplateWrapper

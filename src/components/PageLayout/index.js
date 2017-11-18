@@ -6,18 +6,15 @@ import Header from '../Header'
 import Footer from '../Footer'
 import { Modals } from '../Modals'
 
-export const PageLayout = (props) =>
+const PageLayout = (props) =>
   <div className='container'>
-    <Modals t={props.t} />
+    <Modals {...props} />
 
-    <Header
-      {...props}
-      t={props.t}
-      switchLocale={props.switchLocale} />
+    <Header {...props} />
 
     {props.children}
 
-    <Footer t={props.t} />
+    <Footer {...props} />
 
     <Sprite />
 
@@ -35,17 +32,4 @@ export const PageLayout = (props) =>
     </Helmet>
   </div>
 
-
-class Page extends Component {
-  state = { locale: 'ru', locales: ['ru', 'en'] }
-
-  switchLocale = locale => {
-    this.setState({ locale })
-  }
-
-  t = translates => {
-    return translates[this.state.locale]
-  }
-}
-
-export default Page
+export default PageLayout

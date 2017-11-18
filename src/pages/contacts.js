@@ -1,15 +1,16 @@
-import React from 'react'
+import React, {Component} from 'react'
 import Link from 'gatsby-link'
 import cn from 'classnames'
-import Page, { PageLayout } from '../components/Page'
+import {connectComponent} from '../state/connectComponent'
+import PageLayout from '../components/PageLayout'
 import GoogleMap from '../components/GoogleMap'
 import st from './style.module.css'
 
 
 
-class ContactsPage extends Page {
+class ContactsPage extends Component {
   render() {
-    const t = this.t
+    const t = this.props.actions.translate
 
     return (
       <PageLayout
@@ -64,4 +65,4 @@ class ContactsPage extends Page {
   }
 }
 
-export default ContactsPage
+export default connectComponent(ContactsPage)

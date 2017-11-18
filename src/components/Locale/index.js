@@ -6,8 +6,9 @@ class Locale extends Component {
   change = event => {
     const { target: { value } } = event
 
-    this.props.switchLocale(value)
+    this.props.actions.switchLocale(value)
   }
+
   render() {
     return (
       <div className={st.locale}>

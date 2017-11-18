@@ -30,13 +30,15 @@ class Start extends Component {
   }
 
   render() {
+    const t = this.props.actions.translate
+
     return <div className={st.start}>
 
       <form
         onSubmit={this.sendForm}
         className={st.form}>
         <div className={st.date}>
-          <label className={st.label}>{this.props.t({ru:'Дата и время', en:'Date and time'})}
+          <label className={st.label}>{t({ru:'Дата и время', en:'Date and time'})}
             <input
               name='date'
               className={st.date_input}
@@ -45,7 +47,7 @@ class Start extends Component {
           <TimePicker {...this.props} />
         </div>
         <div className={st.slider}>
-          <label className={st.label}>{this.props.t({ru:'Количество гостей', en:'Number of guests'})}
+          <label className={st.label}>{t({ru:'Количество гостей', en:'Number of guests'})}
             <InputRange
               name='guests'
               maxValue={6}
@@ -55,30 +57,30 @@ class Start extends Component {
           </label>
         </div>
         <div className={st.guests}>
-          <label className={st.label}>{this.props.t({ru:'Информация о гостях', en:'Information about guests'})}
+          <label className={st.label}>{t({ru:'Информация о гостях', en:'Information about guests'})}
             <div className={st.contact_input}>
               <input
                 name='name'
                 className={st.name}
                 type='text'
-                placeholder={this.props.t({ru:'Как вас зовут', en:'Your name'})} />
+                placeholder={t({ru:'Как вас зовут', en:'Your name'})} />
               <input
                 name='phone'
                 className={st.phone}
                 type='tel'
-                placeholder={this.props.t({ru:'Телефон', en:'Phone number'})} />
+                placeholder={t({ru:'Телефон', en:'Phone number'})} />
             </div>
           </label>
 
           <textarea
             name='comments'
             className={st.textarea}
-            placeholder={this.props.t({ru:'Пожелания (необязательно)', en:'Comments (optional)'})}>
+            placeholder={t({ru:'Пожелания (необязательно)', en:'Comments (optional)'})}>
           </textarea>
         </div>
         <button
           className={st.button}
-          type='submit'>{this.props.t({ru:'Забронировать', en:'Reserve'})}
+          type='submit'>{t({ru:'Забронировать', en:'Reserve'})}
         </button>
       </form>
     </div>

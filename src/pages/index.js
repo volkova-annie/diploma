@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {Component} from 'react'
 import Link from 'gatsby-link'
+import {connectComponent} from '../state/connectComponent'
 import CarouselWidget from '../components/CarouselWidget'
-import Page, { PageLayout } from '../components/Page'
+import PageLayout from '../components/PageLayout'
 import Actions from '../components/Actions'
 import { transformLocales } from '../modules/locales'
 import PhotoCollage from '../components/PhotoCollage'
@@ -10,24 +11,19 @@ import st from './style.module.css'
 
 const leftPad = require('left-pad')
 
-class IndexPage extends Page {
+class IndexPage extends Component {
   render() {
-    const localesData = transformLocales(this.props.data, this.state.locales)
-    const currentLocale = this.state.locale
-    const { events, menu, gallery, slider } = localesData[currentLocale]
-    const t = this.t
+    const localesData = transformLocales(this.props.data, this.props.locales)
+    const locale = this.props.locale
+    const { events, menu, gallery, slider } = localesData[locale]
+    const t = this.props.actions.translate
 
     return (
       <PageLayout
-        t={t}
-        switchLocale={this.switchLocale}
         {...this.state}
         {...this.props}>
         <CarouselWidget pictures={slider.edges} />
-        <Actions
-          switchLocale={this.switchLocale}
-          {...this.props}
-          t={t} />
+        <Actions {...this.props} />
         <h2 className={st.heading}>{t({ ru: 'О Кубе', en: 'About Cuba' })}</h2>
         <p
           className={st.text}
@@ -92,11 +88,11 @@ Vivamus et augue sodales, cursus nunc ac, porta tellus. Cras quis sem vel enim s
   }
 }
 
-export default IndexPage
+export default connectComponent(IndexPage)
 
 export const pageQuery = graphql`
   query IndexQuery {
-    ruEvents: allContentfulEvents(limit: 4, sort: {fields: [date]}, filter: { node_locale: { eq: "ru" } }) {
+    ruEvents: allContentfulEvents(limit: 8, sort: {fields: [date]}, filter: { node_locale: { eq: "ru" } }) {
       edges {
         node {
           id
@@ -117,7 +113,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    enEvents: allContentfulEvents(limit: 4, sort: {fields: [date]}, filter: { node_locale: { eq: "en" } }) {
+    enEvents: allContentfulEvents(limit: 8, sort: {fields: [date]}, filter: { node_locale: { eq: "en" } }) {
       edges {
         node {
           id
@@ -138,7 +134,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    ruMenu: allContentfulMenu(limit: 4, filter: { node_locale: { eq: "ru" } }) {
+    ruMenu: allContentfulMenu(limit: 8, filter: { node_locale: { eq: "ru" } }) {
       edges {
         node {
           id
@@ -158,7 +154,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    enMenu: allContentfulMenu(limit: 4, filter: { node_locale: { eq: "en" } }) {
+    enMenu: allContentfulMenu(limit: 8, filter: { node_locale: { eq: "en" } }) {
       edges {
         node {
           id
