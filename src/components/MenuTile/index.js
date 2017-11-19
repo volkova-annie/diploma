@@ -1,26 +1,31 @@
 import React from 'react'
-// import Link from 'gatsby-link'
+import Link from 'gatsby-link'
 import cn from 'classnames'
 import st from './style.module.css'
 
 const MenuTile = props => {
+  const locale = props.locale
   const t = props.t
+  const item = props[locale]
+  const date = new Date(item.date)
 
   return (
-    <div className={st.tile}>
-      {props.image.responsiveResolution && (
+    <Link
+      to={`/menu/${props.slug}`}
+      className={st.tile}>
+      {item.image.responsiveResolution && (
         <div className={st.image_container}>
           <img
-            srcSet={props.image.responsiveResolution.srcSet}
-            src={props.image.responsiveResolution.src} />
+            srcSet={item.image.responsiveResolution.srcSet}
+            src={item.image.responsiveResolution.src} />
         </div>
       )}
-      {!props.image.responsiveResolution && <div className={st.image_placeholder} />}
+      {!item.image.responsiveResolution && <div className={st.image_placeholder} />}
       <div className={st.info}>
-        <span className={st.title}>{props.title}</span>
-        <span className={st.price}>{t({ ru: `${props.price} руб.`, en: `${props.price} rub` })}</span>
+        <span className={st.title}>{item.title}</span>
+        <span className={st.price}>{t({ ru: `${item.price} руб.`, en: `${item.price} rub` })}</span>
       </div>
-    </div>
+    </Link>
   )
 }
 

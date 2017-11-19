@@ -1,18 +1,24 @@
 import React from 'react'
-// import Link from 'gatsby-link'
+import Link from 'gatsby-link'
 import cn from 'classnames'
 import st from './style.module.css'
 
 const GalleryTile = props => {
+  const locale = props.locale
+  const t = props.t
+  const item = props[locale]
+
   return (
-    <div className={st.tile}>
+    <Link
+      to={`/gallery/${props.slug}`}
+      className={st.tile}>
       <div className={st.image}>
         <img
-          srcSet={props.image[0].responsiveResolution.srcSet}
-          src={props.image[0].responsiveResolution.src} />
+          srcSet={item.image[0].responsiveResolution.srcSet}
+          src={item.image[0].responsiveResolution.src} />
       </div>
-      <span className={st.title}>{props.title}</span>
-    </div>
+      <span className={st.title}>{item.title}</span>
+    </Link>
   )
 }
 
