@@ -1,0 +1,25 @@
+.poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25vw;
+  height: 25vw;
+  position: relative;
+}
+
+.title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.img {
+  margin: 0;
+  min-width: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.time {
+  margin: 0;
+  font-size: 0.8em;
+}

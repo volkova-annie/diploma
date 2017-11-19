@@ -1,0 +1,36 @@
+.list {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: flex-start;
+}
+
+.item {
+  width: 25%;
+  margin: 0;
+
+  &:nth-child(1), &:nth-child(2) {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .item {
+    width: 50%;
+    margin: 0;
+
+    &:nth-child(1), &:nth-child(2) {
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .item {
+    width: 100%;
+    margin: 0;
+
+    &:nth-child(1), &:nth-child(2) {
+      width: 100%;
+    }
+  }
+}

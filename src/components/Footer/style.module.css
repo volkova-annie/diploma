@@ -1,0 +1,27 @@
+@import '../../config.css';
+
+.footer {
+  font-size: 0.8rem;
+  width: 100%;
+  margin: 40px auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.social {
+  justify-content: center;
+  color: var(--color-red);
+}
+
+.social_title {
+  font-weight: bold;
+  margin-bottom: 1em;
+}

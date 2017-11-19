@@ -1,62 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
+import './style.css'
 
-import './index.css'
+/**
+ * Logo: https://ucarecdn.com/f5b33116-7a4d-4864-bc97-6982f20c696b/logo_cuba.svg
+ * Flag: https://ucarecdn.com/fc799858-d061-47df-bc8e-0ac6eebb1201/-/preview/-/format/auto/
+ * Lines: https://ucarecdn.com/810be95e-2e49-4014-9340-2901bbc64c1a/-/preview/-/format/auto/
+ * BG: https://ucarecdn.com/b81554c4-81f6-43bc-9e11-521d89c40427/-/preview/-/format/auto/
+ */
 
-const Header = () =>
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Gatsby
-        </Link>
-      </h1>
-    </div>
-  </div>
-
-const TemplateWrapper = ({ children }) =>
-  <div>
-    <Helmet
-      title="Gatsby Default Starter"
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-  </div>
-
-TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
+const TemplateWrapper = props => props.children()
 
 export default TemplateWrapper

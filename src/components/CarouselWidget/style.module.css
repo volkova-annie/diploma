@@ -1,0 +1,60 @@
+.carousel {
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  & :global(.carousel.carousel-slider) {
+    height: 400px;
+  }
+
+  & :global(.slider-wrapper) {
+    height: 400px;
+  }
+
+  & :global(.slide) {
+    height: 400px;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.image {
+  min-height: 100%;
+  object-fit: contain;
+}
+
+.legend {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+@media (max-width: 1279px) {
+  .carousel {
+    height: 31.25vw;
+
+    & :global(.carousel.carousel-slider) {
+      height: 31.25vw;
+    }
+
+    & :global(.slider-wrapper) {
+      height: 31.25vw;
+    }
+
+    & :global(.slide) {
+      height: 31.25vw;
+    }
+  }
+}

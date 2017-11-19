@@ -1,0 +1,31 @@
+@import '../../config.css';
+
+.iconed {
+  text-align: center;
+  font-size: 1em;
+  text-decoration: none;
+  color: currentColor;
+
+  &.action {
+    cursor: pointer;
+  }
+
+  &:global(.disabled) {
+    color: rgba(120, 120, 120, 0.5);
+    cursor: not-allowed;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.iconed_title {
+  font-weight: bold;
+  margin-bottom: 0;
+  font-family: var(--font-headings);
+  font-size: 18px;
+  color: currentColor;
+}

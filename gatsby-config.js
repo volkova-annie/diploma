@@ -1,14 +1,16 @@
 module.exports = {
+  pathPrefix: '/cuba-site',
   siteMetadata: {
-    title: `Cuba Bar - Golohovaya 28`,
+    title: 'Cuba Bar - Golohovaya 28',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
+    // 'gatsby-plugin-offline',
     {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: 'pp17w473qhjl',
-        accessToken: 'f48298775421dff693fb6baf54cb7683632fbdf6bbac0f9704ea4a3c8e405db3',
+        accessToken: 'c75731e78862f3356bf3245ecdefc5118711b4df9168b8a229d5c3ba028e66e9',
       },
     },
   ],

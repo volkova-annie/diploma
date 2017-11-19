@@ -1,0 +1,8 @@
+@import '../../config.css';
+
+.select {
+  outline-color: currentColor;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+}
