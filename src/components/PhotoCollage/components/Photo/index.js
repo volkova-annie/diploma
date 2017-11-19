@@ -22,6 +22,10 @@ const Photo = (props) => {
         <span className={st.date}>{props.date}</span>
         <span className={st.time}>{props.time}</span>
       </div>}
+
+      {props.price && <div className={st.price}>
+        <span className={st.price}>{props.t({ ru: `${props.price} руб.`, en: `${props.price} rub` })}</span>
+      </div>}
     </div>
   </div>
 }

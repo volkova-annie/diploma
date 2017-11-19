@@ -81,7 +81,9 @@ Vivamus et augue sodales, cursus nunc ac, porta tellus. Cras quis sem vel enim s
               })
             }
           </p>
-          <PhotoCollage items={menu.edges} />
+          <PhotoCollage
+            items={menu.edges}
+            t={t} />
         </section>
       </PageLayout>
     )
