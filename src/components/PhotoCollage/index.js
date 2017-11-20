@@ -4,7 +4,7 @@ import st from './style.module.css'
 import Photo from './components/Photo'
 const leftPad = require('left-pad')
 
-const PhotoCollage = ({items, props}) => {
+const PhotoCollage = ({items, t, props}) => {
   const filteredItems = items.filter(item => !!item.node.image.responsiveResolution)
 
   return <div className={st.collage}>
@@ -12,6 +12,7 @@ const PhotoCollage = ({items, props}) => {
       const isEven = index % 2 === 0
       const deg = (Math.random() * 15).toFixed()
       const {node} = edge
+      const {price} = node
       const {date} = node
       const localeDate = date
         ? new Date(date).toLocaleDateString()
@@ -36,7 +37,9 @@ const PhotoCollage = ({items, props}) => {
         time={time}
         type={node.type}
         description={node.description}
-        key={node.id} />
+        key={node.id}
+        price={price}
+        t={t} />
     })}
   </div>
 }
