@@ -13,7 +13,7 @@ const menuPost = path.resolve(process.cwd(), 'src/templates/menu-single.js')
 const galleryPost = path.resolve(process.cwd(), 'src/templates/gallery-single.js')
 
 function createPost(node) {
-  const date = moment(node.en.date).format('YY-MM-d')
+  const date = moment(node.en.createdAt).format('YY-MM-d')
 
   return Object.assign({}, node, {
     formatedDate: date,
