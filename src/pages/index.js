@@ -105,7 +105,7 @@ export const pageQuery = graphql`
           }
           type
           image {
-            responsiveResolution(width: 300) {
+            responsiveResolution(width: 600) {
               src
               srcSet
               height
@@ -126,7 +126,7 @@ export const pageQuery = graphql`
           }
           type
           image {
-            responsiveResolution(width: 300) {
+            responsiveResolution(width: 600) {
               src
               srcSet
               height
@@ -146,7 +146,7 @@ export const pageQuery = graphql`
           }
           price
           image {
-            responsiveResolution(width: 300) {
+            responsiveResolution(width: 600) {
               src
               srcSet
               height
@@ -166,7 +166,7 @@ export const pageQuery = graphql`
           }
           price
           image {
-            responsiveResolution(width: 300) {
+            responsiveResolution(width: 600) {
               src
               srcSet
               height

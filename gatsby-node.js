@@ -5,12 +5,12 @@ const moment = require('moment')
 const pagesRequest = require('./pages-request')
 const combineNodes = require('./helpers/combineNodes')
 
-const eventsPage = path.resolve(process.cwd(), 'src/templates/events.js')
-const menuPage = path.resolve(process.cwd(), 'src/templates/menu.js')
-const galleryPage = path.resolve(process.cwd(), 'src/templates/gallery.js')
-const eventsPost = path.resolve(process.cwd(), 'src/templates/events-single.js')
-const menuPost = path.resolve(process.cwd(), 'src/templates/menu-single.js')
-const galleryPost = path.resolve(process.cwd(), 'src/templates/gallery-single.js')
+const eventsPage = path.resolve(process.cwd(), 'src/templates/events/index.js')
+const eventsPost = path.resolve(process.cwd(), 'src/templates/events/single.js')
+const menuPage = path.resolve(process.cwd(), 'src/templates/menu/index.js')
+const menuPost = path.resolve(process.cwd(), 'src/templates/menu/single.js')
+const galleryPage = path.resolve(process.cwd(), 'src/templates/gallery/index.js')
+const galleryPost = path.resolve(process.cwd(), 'src/templates/gallery/single.js')
 
 function createPost(node) {
   const date = moment(node.en.createdAt).format('YY-MM-d')

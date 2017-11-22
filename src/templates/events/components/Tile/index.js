@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import cn from 'classnames'
-import { getTime, getDate } from '../../modules/date'
+import { getTime, getDate } from '../../../../modules/date'
 import st from './style.module.css'
 
-const EventTile = props => {
+const Tile = props => {
   const locale = props.locale
   const t = props.t
   const item = props[locale]
@@ -36,4 +36,4 @@ const EventTile = props => {
   )
 }
 
-export default EventTile
+export default Tile
