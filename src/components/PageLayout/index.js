@@ -7,7 +7,7 @@ import Footer from '../Footer'
 import { Modals } from '../Modals'
 
 const PageLayout = (props) =>
-  <div className='container'>
+  <main className='container'>
     <Modals {...props} />
 
     <Header {...props} />
@@ -30,6 +30,6 @@ const PageLayout = (props) =>
         href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|Podkova:400,600&amp;subset=cyrillic,cyrillic-ext,latin-ext"
         rel="stylesheet" />
     </Helmet>
-  </div>
+  </main>
 
 export default PageLayout
