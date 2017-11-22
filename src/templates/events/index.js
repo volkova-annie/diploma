@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
 import Link from 'gatsby-link'
 import cn from 'classnames'
-import {connectComponent} from '../state/connectComponent'
-import PageLayout from '../components/PageLayout'
-import PageGrid from '../components/PageGrid'
-import MenuTile from '../components/MenuTile'
+import {connectComponent} from '../../state/connectComponent'
+import PageLayout from '../../components/PageLayout'
+import PageGrid from '../../components/PageGrid'
+import Tile from './components/Tile'
 
-class MenuPage extends Component {
-  itemRenderer = (node) => <MenuTile
+class EventsPage extends Component {
+  itemRenderer = (node) => <Tile
     {...node}
     t={this.props.actions.translate}
     locale={this.props.locale} />
@@ -27,4 +27,4 @@ class MenuPage extends Component {
   }
 }
 
-export default connectComponent(MenuPage)
+export default connectComponent(EventsPage)
