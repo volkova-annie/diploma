@@ -1,0 +1,25 @@
+.price {
+  font-weight: bold;
+}
+
+.title {
+  margin-top: 0;
+}
+
+.description {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    display: block;
+  }
+}
