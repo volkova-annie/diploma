@@ -4,16 +4,16 @@ import st from './style.module.css'
 import Photo from './components/Photo'
 const leftPad = require('left-pad')
 
-const PhotoCollage = ({items, t, props}) => {
-  const filteredItems = items.filter(item => !!item.node.image.responsiveResolution)
+const PhotoCollage = ({items, t, locale}) => {
+  const filteredItems = items
+    .map(item => item[locale])
+    .filter(item => !!item.image.responsiveResolution)
 
   return <div className={st.collage}>
-    {filteredItems.map((edge, index) => {
+    {filteredItems.map((node, index) => {
       const isEven = index % 2 === 0
       const deg = (Math.random() * 15).toFixed()
-      const {node} = edge
-      const {price} = node
-      const {date} = node
+      const {price, date} = node
       const localeDate = date
         ? new Date(date).toLocaleDateString()
         : null

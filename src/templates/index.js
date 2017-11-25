@@ -4,25 +4,26 @@ import {connectComponent} from '../state/connectComponent'
 import CarouselWidget from '../components/CarouselWidget'
 import PageLayout from '../components/PageLayout'
 import Actions from '../components/Actions'
-import { transformLocales } from '../modules/locales'
+import { filterLocales } from '../modules/locales'
 import PhotoCollage from '../components/PhotoCollage'
 import Poster from '../components/Poster'
-import st from './style.module.css'
+import st from '../pages/style.module.css'
 
 const leftPad = require('left-pad')
 
 class IndexPage extends Component {
   render() {
-    const localesData = transformLocales(this.props.data, this.props.locales)
+    const {data: {events, menu, gallery, slider}} = this.props.pathContext
     const locale = this.props.locale
-    const { events, menu, gallery, slider } = localesData[locale]
     const t = this.props.actions.translate
 
     return (
       <PageLayout
         {...this.state}
         {...this.props}>
-        <CarouselWidget pictures={slider.edges} />
+        <CarouselWidget
+          locale={locale}
+          pictures={slider} />
         <Actions {...this.props} />
         <h2 className={st.heading}>{t({ ru: 'О Кубе', en: 'About Cuba' })}</h2>
         <p
@@ -66,7 +67,10 @@ Aliquam lobortis, tortor ut lobortis bibendum, urna ante tristique odio, vel ves
               })
             }
           </p>
-          <PhotoCollage items={events.edges} />
+          <PhotoCollage
+            t={t}
+            locale={locale}
+            items={events} />
         </section>
 
         <section className={st.section}>
@@ -82,8 +86,9 @@ Vivamus et augue sodales, cursus nunc ac, porta tellus. Cras quis sem vel enim s
             }
           </p>
           <PhotoCollage
-            items={menu.edges}
-            t={t} />
+            t={t}
+            locale={locale}
+            items={menu} />
         </section>
       </PageLayout>
     )
@@ -91,122 +96,3 @@ Vivamus et augue sodales, cursus nunc ac, porta tellus. Cras quis sem vel enim s
 }
 
 export default connectComponent(IndexPage)
-
-export const pageQuery = graphql`
-  query IndexQuery {
-    ruEvents: allContentfulEvents(limit: 8, sort: {fields: [date]}, filter: { node_locale: { eq: "ru" } }) {
-      edges {
-        node {
-          id
-          title
-          date
-          description {
-            description
-          }
-          type
-          image {
-            responsiveResolution(width: 600) {
-              src
-              srcSet
-              height
-              width
-            }
-          }
-        }
-      }
-    }
-    enEvents: allContentfulEvents(limit: 8, sort: {fields: [date]}, filter: { node_locale: { eq: "en" } }) {
-      edges {
-        node {
-          id
-          title
-          date
-          description {
-            description
-          }
-          type
-          image {
-            responsiveResolution(width: 600) {
-              src
-              srcSet
-              height
-              width
-            }
-          }
-        }
-      }
-    }
-    ruMenu: allContentfulMenu(limit: 8, filter: { node_locale: { eq: "ru" } }) {
-      edges {
-        node {
-          id
-          title
-          description {
-            description
-          }
-          price
-          image {
-            responsiveResolution(width: 600) {
-              src
-              srcSet
-              height
-              width
-            }
-          }
-        }
-      }
-    }
-    enMenu: allContentfulMenu(limit: 8, filter: { node_locale: { eq: "en" } }) {
-      edges {
-        node {
-          id
-          title
-          description {
-            description
-          }
-          price
-          image {
-            responsiveResolution(width: 600) {
-              src
-              srcSet
-              height
-              width
-            }
-          }
-        }
-      }
-    }
-    ruSlider: allContentfulHomePageSlider(filter: { node_locale: { eq: "ru" } }) {
-      edges {
-        node {
-          id
-          title
-          picture {
-            responsiveResolution(width: 1280) {
-              src
-              srcSet
-              height
-              width
-            }
-          }
-        }
-      }
-    }
-    enSlider: allContentfulHomePageSlider(filter: { node_locale: { eq: "en" } }) {
-      edges {
-        node {
-          id
-          title
-          picture {
-            responsiveResolution(width: 1280) {
-              src
-              srcSet
-              height
-              width
-            }
-          }
-        }
-      }
-    }
-  }
-`

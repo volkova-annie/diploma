@@ -5,6 +5,7 @@ const moment = require('moment')
 const pagesRequest = require('./pages-request')
 const combineNodes = require('./helpers/combineNodes')
 
+const indexPage = path.resolve(process.cwd(), 'src/templates/index.js')
 const eventsPage = path.resolve(process.cwd(), 'src/templates/events/index.js')
 const eventsPost = path.resolve(process.cwd(), 'src/templates/events/single.js')
 const menuPage = path.resolve(process.cwd(), 'src/templates/menu/index.js')
@@ -48,11 +49,28 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
     })
   }
 
-  let { events, menu, gallery } = result.data
+  let { events, menu, gallery, slider } = result.data
 
   events = combineNodes(events.edges).map(createPost)
   menu = combineNodes(menu.edges).map(createPost)
   gallery = combineNodes(gallery.edges).map(createPost)
+  slider = combineNodes(slider.edges)
+
+  function filterIndexItem(item) {
+    return (item.ru.image && item.ru.image.responsiveResolution) && (item.en.image && item.en.image.responsiveResolution)
+  }
+
+  const indexData = {
+    events: events.filter(filterIndexItem).slice(0, 8),
+    menu: menu.filter(filterIndexItem).slice(0, 8),
+    slider: slider,
+  }
+
+  createPage({
+    path: '/',
+    component: slash(indexPage),
+    context: {data: indexData}
+  })
 
   createPages({
     rootPath: '/events',

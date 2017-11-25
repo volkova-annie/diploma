@@ -61,5 +61,22 @@ query {
       }
     }
   }
+  slider: allContentfulHomePageSlider {
+    edges {
+      node {
+        node_locale
+        id
+        title
+        picture {
+          responsiveResolution(width: 1280) {
+            src
+            srcSet
+            height
+            width
+          }
+        }
+      }
+    }
+  }
 }
 `
