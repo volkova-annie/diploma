@@ -5,9 +5,11 @@ const Content = (props) => {
   const {item, t} = props
 
   return <div>
-    <span>{item.title}</span>
-    <span className={st.price}>{t({ ru: `${item.price} руб.`, en: `${item.price} rub` })}</span>
-    <div>{item.description.description}</div>
+    <div className={st.heading}>
+      <h3 className={st.title}>{item.title}</h3>
+      <span className={st.price}>{t({ ru: `${item.price} руб.`, en: `${item.price} rub` })}</span>
+    </div>
+    <div className={st.description}>{item.description.description}</div>
   </div>
 }
 

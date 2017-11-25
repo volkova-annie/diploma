@@ -4,7 +4,7 @@ import st from './style.module.css'
 
 const SinglePost = (props) => {
   return (
-    <section>
+    <section className={st.single_post}>
       <aside className={st.presentation}>{props.presentation}</aside>
       <article className={st.content}>{props.content}</article>
     </section>

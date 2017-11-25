@@ -1,0 +1,14 @@
+.single_post {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.presentation {
+  margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .single_post {
+    flex-direction: column;
+  }
+}

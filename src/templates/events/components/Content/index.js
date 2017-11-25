@@ -7,14 +7,16 @@ const Content = (props) => {
   const date = new Date(item.date)
 
   return <div>
-    <span>{item.title}</span>
-    <span>
-      {t({
-        ru: `${getDate(date).ru} в ${getTime(date)}`,
-        en: `${getDate(date).en} at ${getTime(date)}`,
-      })}
-    </span>
-    <div>{item.description.description}</div>
+    <div className={st.heading}>
+      <h3 className={st.title}>{item.title}</h3>
+      <span className={st.date}>
+        {t({
+          ru: `${getDate(date).ru} в ${getTime(date)}`,
+          en: `${getDate(date).en} at ${getTime(date)}`,
+        })}
+      </span>
+    </div>
+    <div className={st.description}>{item.description.description}</div>
   </div>
 
 }
