@@ -23,9 +23,9 @@ const PhotoCollage = ({items, t, locale, rootPage}) =>
         ? hours + ':' + minutes
         : null
 
-      return <a
+      return <Link
         className={st.link}
-        href={`${rootPage}/${node.slug}`}
+        to={`/${rootPage}/${node.slug}`}
         key={node[locale].id}>
         <Photo
           className={st.photo}
@@ -39,7 +39,7 @@ const PhotoCollage = ({items, t, locale, rootPage}) =>
           description={description}
           price={price}
           t={t} />
-      </a>
+      </Link>
     })}
   </div>
 
