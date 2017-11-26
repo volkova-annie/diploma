@@ -6,7 +6,7 @@ const Presentation = ({item}) => {
   if (item.image.length > 0  && item.image[0].file) {
     return <Picture
       sizes={{default: {w:640}}}
-      file={item.image.file} />
+      file={item.image[0].file} />
   }
   else {
     return null
