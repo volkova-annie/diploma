@@ -26,9 +26,6 @@ const PageLayout = (props) =>
       <meta
         name="keywords"
         content="cuba, bar, gorohovoya" />
-      <link
-        href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|Podkova:400,600&amp;subset=cyrillic,cyrillic-ext,latin-ext"
-        rel="stylesheet" />
     </Helmet>
   </main>
 

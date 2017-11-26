@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Entities from 'html-entities'
 
 const BUILD_TIME = new Date().getTime()
@@ -7,10 +6,6 @@ const {AllHtmlEntities} = Entities
 const entities = new AllHtmlEntities()
 
 export default class HTML extends React.Component {
-  static propTypes = {
-    body: PropTypes.string,
-  }
-
   render() {
     let css
     let analytics
@@ -21,7 +16,7 @@ export default class HTML extends React.Component {
             __html: require('!raw!../public/styles.css'),
           }} />
       )
-      analytics = (
+      analytics = null/*(
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -32,8 +27,12 @@ export default class HTML extends React.Component {
             ga('create', 'UA-102437066-1', 'auto');
             ga('send', 'pageview');`,
           }} />
-      )
+      )*/
     }
+
+    const fonts = <link
+      href='https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|Podkova:400&amp;subset=cyrillic'
+      rel="stylesheet" />
 
     return (
       <html lang='en'>
@@ -47,6 +46,7 @@ export default class HTML extends React.Component {
             content='width=device-width, initial-scale=1.0' />
           {this.props.headComponents}
           {css}
+          {fonts}
         </head>
         <body>
           <div
