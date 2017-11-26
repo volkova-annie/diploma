@@ -57,7 +57,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
   slider = combineNodes(slider.edges)
 
   function filterIndexItem(item) {
-    return (item.ru.image && item.ru.image.responsiveResolution) && (item.en.image && item.en.image.responsiveResolution)
+    return (item.ru.image && item.ru.image.file) && (item.en.image && item.en.image.file)
   }
 
   const indexData = {

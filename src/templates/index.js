@@ -70,6 +70,7 @@ Aliquam lobortis, tortor ut lobortis bibendum, urna ante tristique odio, vel ves
           <PhotoCollage
             t={t}
             locale={locale}
+            rootPage={'events'}
             items={events} />
         </section>
 
@@ -88,6 +89,7 @@ Vivamus et augue sodales, cursus nunc ac, porta tellus. Cras quis sem vel enim s
           <PhotoCollage
             t={t}
             locale={locale}
+            rootPage={'menu'}
             items={menu} />
         </section>
       </PageLayout>

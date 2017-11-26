@@ -7,8 +7,9 @@ import PageGrid from '../../components/PageGrid'
 import Tile from './components/Tile'
 
 class EventsPage extends Component {
-  itemRenderer = (node) => <Tile
+  itemRenderer = (node, firstline) => <Tile
     {...node}
+    firstline={firstline}
     t={this.props.actions.translate}
     locale={this.props.locale} />
 
