@@ -5,6 +5,7 @@ import Navbar from '../Navbar'
 import Social from '../Social'
 import Locale from '../Locale'
 import Iconed from '../Iconed'
+import Logo from '../Logo'
 import st from './style.module.css'
 
 const Header = props => (
@@ -24,9 +25,7 @@ const Header = props => (
       <Link
         className={st.logo_wrapper}
         to="/">
-        <Iconed
-          className={st.logo}
-          icon="logo" />
+        <Logo />
       </Link>
 
       <div className={cn(st.fill, st.last)}>
