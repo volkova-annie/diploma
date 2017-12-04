@@ -1,11 +1,10 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import cn from 'classnames'
 import st from './style.module.css'
 import { Sprite, Icon } from '../SVGIcon'
 
 const Iconed = props => {
-  const {title, subtitle, icon, className, onClick, link} = props
+  const {title, subtitle, icon, className, iconClassName, onClick, link} = props
 
   if (link) {
     return (
@@ -14,6 +13,7 @@ const Iconed = props => {
         href={link}
         target="_blank">
         <Icon
+          iconClassName={iconClassName}
           className={st.icon}
           icon={icon} />
         {title && <p className={st.iconed_title}>{title}</p>}
@@ -26,6 +26,7 @@ const Iconed = props => {
         onClick={onClick}
         className={cn(className, st.iconed, {[st.action]: !!onClick})}>
         <Icon
+          iconClassName={iconClassName}
           className={st.icon}
           icon={icon} />
         {title && <p className={st.iconed_title}>{title}</p>}

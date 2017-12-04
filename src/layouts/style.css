@@ -253,7 +253,7 @@ h1, h2 {
 
 h1:after, h1:before, h2:after, h2:before {
   content: '';
-  background-image: url(../../assets/star.svg);
+  background-image: url(../../static/icons/star.svg);
   background-size: contain;
   width: 0.5em;
   height: 0.5em;
@@ -611,7 +611,7 @@ h6 {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2.5rem;
+  padding: 0 2.5rem 2.5rem;
 }
 
 @media (max-width: 1279px) {
@@ -620,12 +620,37 @@ h6 {
 
 @media (max-width: 1023px) {
   .container {
-    padding: 2rem;
+    padding: 0 2rem 2rem;
   }
 }
 
 @media (max-width: 767px) {
-  padding: 1.5rem;
+  h1, h2 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+
+  h1:after, h1:before, h2:after, h2:before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+  h1:after, h2:after {
+    left: -1em;
+  }
+
+  h1:before, h2:before {
+    right: -1em;
+  }
+
+  .container {
+    padding: 0 0 1.5rem;
+  }
 }
 
 @media (max-width: 479px) {

@@ -10,8 +10,8 @@ const eventsPage = path.resolve(process.cwd(), 'src/templates/events/index.js')
 const eventsPost = path.resolve(process.cwd(), 'src/templates/events/single.js')
 const menuPage = path.resolve(process.cwd(), 'src/templates/menu/index.js')
 const menuPost = path.resolve(process.cwd(), 'src/templates/menu/single.js')
-const galleryPage = path.resolve(process.cwd(), 'src/templates/gallery/index.js')
-const galleryPost = path.resolve(process.cwd(), 'src/templates/gallery/single.js')
+// const galleryPage = path.resolve(process.cwd(), 'src/templates/gallery/index.js')
+// const galleryPost = path.resolve(process.cwd(), 'src/templates/gallery/single.js')
 
 function createPost(node) {
   const date = moment(node.en.createdAt).format('YY-MM-d')
@@ -53,7 +53,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
 
   events = combineNodes(events.edges).map(createPost)
   menu = combineNodes(menu.edges).map(createPost)
-  gallery = combineNodes(gallery.edges).map(createPost)
+  // gallery = combineNodes(gallery.edges).map(createPost)
   slider = combineNodes(slider.edges)
 
   function filterIndexItem(item) {
@@ -84,10 +84,10 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
     postTemplate: menuPost,
     items: menu,
   })
-  createPages({
-    rootPath: '/gallery',
-    pageTemplate: galleryPage,
-    postTemplate: galleryPost,
-    items: gallery,
-  })
+  // createPages({
+  //   rootPath: '/gallery',
+  //   pageTemplate: galleryPage,
+  //   postTemplate: galleryPost,
+  //   items: gallery,
+  // })
 }

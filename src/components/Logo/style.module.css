@@ -27,6 +27,7 @@
   border-width: 3px;
   border-style: solid;
   border-color: var(--color-red);
+  background-color: var(--color-white);
   display: block;
   width: 100px;
   height: 100px;
