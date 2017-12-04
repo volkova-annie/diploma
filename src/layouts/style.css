@@ -236,6 +236,10 @@ body {
   -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  background-image: url('../../static/icons/bg.svg');
+  background-size: auto 100%;
+  background-position: bottom right;
+  background-attachment: fixed;
 }
 
 img {
