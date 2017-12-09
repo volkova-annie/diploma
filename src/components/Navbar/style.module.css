@@ -30,9 +30,18 @@
   font-family: var(--font-headings);
   font-size: 1.1618rem;
   margin: 0;
+  transition: all 0.15s;
 
   & + & {
     margin-left: 50%;
+  }
+
+  &:hover, &:focus {
+    color: var(--color-blue-light);
+  }
+
+  &:active {
+    color: var(--color-blue-dark);
   }
 }
 

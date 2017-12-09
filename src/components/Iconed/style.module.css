@@ -29,3 +29,7 @@
   font-size: 18px;
   color: currentColor;
 }
+
+.iconed_text {
+  margin-bottom: 0;
+}
