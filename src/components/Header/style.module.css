@@ -106,10 +106,19 @@
 @media (max-width: 767px) {
   .header {
     margin-top: 0;
+    margin-bottom: 0;
 
     &:before {
-      background-position: top calc(50% + 41px) center;
+      background-position: top calc(50% + 52px) center;
+      height: calc(100% - 90px);
     }
+  }
+
+  .nav {
+    position: static;
+    z-index: 9;
+    bottom: 2.5rem;
+    width: 100%;
   }
 
   .last {

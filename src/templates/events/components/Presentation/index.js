@@ -5,7 +5,14 @@ import Picture from '../../../../components/Picture'
 const Presentation = ({item}) => {
   if (item.image.file) {
     return <Picture
-      sizes={{default: {w:640}}}
+      className={st.picture}
+      sizes={{
+        default: {w:360},
+        '(max-width: 1023px)': {w: 380},
+        '(max-width: 767px)': {w: 690},
+        '(max-width: 479px)': {w: 430},
+        '(min-width: 320px)': {w: 290},
+      }}
       file={item.image.file} />
   }
   else {

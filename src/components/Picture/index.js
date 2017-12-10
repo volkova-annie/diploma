@@ -27,15 +27,15 @@ function getImg(src, modifiers, sizes) {
     : sizes.w
       ? sizes.w
       : null
-  const imgHeight = typeof sizes === 'object'
+  const imgHeight = typeof sizes === 'object' && sizes.h
     ? sizes.h
     : null
 
   return `<img
     src='${buildUrl(src, imgModifiersString, imgWidth, imgHeight, 1)}'
     srcSet='${buildUrl(src, imgModifiersString, imgWidth, imgHeight, 2)}'
-    width=${imgWidth}
-    height=${imgHeight} />`
+    ${imgWidth ? `width=${imgWidth}` : ''}
+    ${imgHeight ? `height=${imgHeight}` : ''} />`
 }
 
 function getSources(file, modifiers, sizes) {
@@ -79,7 +79,7 @@ function getSource(obj) {
     : obj.sizes.w
       ? obj.sizes.w
       : null
-  const imgHeight = typeof obj.sizes === 'object'
+  const imgHeight = typeof obj.sizes === 'object' && obj.sizes.h
     ? obj.sizes.h
     : null
 

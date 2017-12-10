@@ -659,5 +659,25 @@ h6 {
 }
 
 @media (max-width: 479px) {
+  h1, h2 {
+    display: block;
+  }
 
+  h1:after, h1:before, h2:after, h2:before {
+    position: static;
+    transform: translateY(0);
+    margin: 0;
+  }
+
+  h1:after, h2:after {
+    margin-left: 1rem;
+  }
+
+  h1:before, h2:before {
+    margin-right: 1rem;
+  }
+
+  .container {
+    padding: 0 0 1rem;
+  }
 }

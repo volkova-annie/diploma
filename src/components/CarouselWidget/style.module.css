@@ -71,3 +71,10 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .carousel {
+    margin-top: 60px;
+    padding: 0;
+  }
+}
