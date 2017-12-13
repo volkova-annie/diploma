@@ -27,11 +27,10 @@ const Actions = (props) => {
       title={t({ru: 'Время работы', en: 'Working hours'})}
       subtitle='15:00 - 03:00' />
     <Iconed
-      className={cn(st.action, st.disabled)}
+      className={st.action}
       onClick={typeof window !== 'undefined' ? window.openModal.bind(null, 'Booking') : null}
       icon='dinner'
-      title={t({ru: 'Забронировать столик', en: 'Reserve a table'})}
-      subtitle={t({ru: 'Скоро заработает', en: 'Coming soon'})} />
+      title={t({ru: 'Забронировать столик', en: 'Reserve a table'})} />
   </div>
 }
 

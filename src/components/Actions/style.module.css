@@ -20,6 +20,21 @@
   cursor: not-allowed;
 }
 
+.action {
+  padding: 20px;
+  transition: all 0.15s;
+
+  &:hover, &:focus {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+  }
+
+  &:active {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+}
+
 @media (max-width: 1023px) {
   .actions {
     margin-left: 24px;

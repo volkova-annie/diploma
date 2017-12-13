@@ -63,11 +63,6 @@ dfn {
   font-style: italic;
 }
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
 mark {
   background-color: #ff0;
   color: #000;
@@ -241,6 +236,11 @@ body {
   -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  background-image: url('../../static/icons/bg.svg');
+  background-size: auto 100%;
+  background-position: bottom right;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 img {
@@ -249,10 +249,34 @@ img {
   padding: 0;
 }
 
+h1, h2 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h1:after, h1:before, h2:after, h2:before {
+  content: '';
+  background-image: url(../../static/icons/star.svg);
+  background-size: contain;
+  width: 0.5em;
+  height: 0.5em;
+  display: inline-block;
+}
+
+h1:after, h2:after {
+  margin-left: 1em;
+}
+
+h1:before, h2:before {
+  margin-right: 1em;
+}
+
 h1 {
   margin: 0 0 1.45rem;
   padding: 0;
-  color: inherit;
+  color: --var(--color-red);
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.8219rem;
@@ -262,7 +286,7 @@ h1 {
 h2 {
   margin: 0 0 1.45rem;
   padding: 0;
-  color: inherit;
+  color: --var(--color-red);
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.5681rem;
@@ -592,7 +616,7 @@ h6 {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2.5rem;
+  padding: 0 2.5rem 2.5rem;
 }
 
 @media (max-width: 1279px) {
@@ -601,14 +625,59 @@ h6 {
 
 @media (max-width: 1023px) {
   .container {
-    padding: 2rem;
+    padding: 0 2rem 2rem;
   }
 }
 
 @media (max-width: 767px) {
-  padding: 1.5rem;
+  h1, h2 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+
+  h1:after, h1:before, h2:after, h2:before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+  h1:after, h2:after {
+    left: -1em;
+  }
+
+  h1:before, h2:before {
+    right: -1em;
+  }
+
+  .container {
+    padding: 0 0 1.5rem;
+  }
 }
 
 @media (max-width: 479px) {
+  h1, h2 {
+    display: block;
+  }
 
+  h1:after, h1:before, h2:after, h2:before {
+    position: static;
+    transform: translateY(0);
+    margin: 0;
+  }
+
+  h1:after, h2:after {
+    margin-left: 1rem;
+  }
+
+  h1:before, h2:before {
+    margin-right: 1rem;
+  }
+
+  .container {
+    padding: 0 0 1rem;
+  }
 }

@@ -8,7 +8,7 @@ const PageGrid = ({items, renderer}) =>
       <li
         key={`${item.id}${index}`}
         className={cn(st.item, {'firstline': index < 2})}>
-        {renderer(item)}
+        {renderer(item, index < 2)}
       </li>
     )}
   </ul>

@@ -4,16 +4,12 @@ import st from './style.module.css'
 import Photo from './components/Photo'
 const leftPad = require('left-pad')
 
-const PhotoCollage = ({items, t, props}) => {
-  const filteredItems = items.filter(item => !!item.node.image.responsiveResolution)
-
-  return <div className={st.collage}>
-    {filteredItems.map((edge, index) => {
+const PhotoCollage = ({items, t, locale, rootPage}) =>
+  <div className={st.collage}>
+    {items.map((node, index) => {
       const isEven = index % 2 === 0
       const deg = (Math.random() * 15).toFixed()
-      const {node} = edge
-      const {price} = node
-      const {date} = node
+      const {price, date, image, title, type, description} = node[locale]
       const localeDate = date
         ? new Date(date).toLocaleDateString()
         : null
@@ -27,21 +23,24 @@ const PhotoCollage = ({items, t, props}) => {
         ? hours + ':' + minutes
         : null
 
-      return <Photo
-        className={st.photo}
-        isEven={isEven}
-        deg={deg}
-        image={node.image}
-        title={node.title}
-        date={localeDate}
-        time={time}
-        type={node.type}
-        description={node.description}
-        key={node.id}
-        price={price}
-        t={t} />
+      return <Link
+        className={st.link}
+        to={`/${rootPage}/${node.slug}`}
+        key={node[locale].id}>
+        <Photo
+          className={st.photo}
+          isEven={isEven}
+          deg={deg}
+          image={image}
+          title={title}
+          date={localeDate}
+          time={time}
+          type={type}
+          description={description}
+          price={price}
+          t={t} />
+      </Link>
     })}
   </div>
-}
 
 export default PhotoCollage

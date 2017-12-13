@@ -8,7 +8,7 @@ export function translate(translates) {
 
 export function switchLocale(locale) {
   return {
-    type: '@@locale/SWITCH_LOCALE',
+    type: 'locale/SWITCH_LOCALE',
     locale,
   }
 }

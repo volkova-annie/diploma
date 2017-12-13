@@ -11,7 +11,7 @@ const Icon = props =>
   <svg
     className={cn(st.icon, props.className)}
     dangerouslySetInnerHTML={{__html: `
-    <use xlink:href="#${props.icon}" />
+    <use xlink:href="#${props.icon}" class="${props.iconClassName}"/>
   `}} />
 
 const Sprite = () =>

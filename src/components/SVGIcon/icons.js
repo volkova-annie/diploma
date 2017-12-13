@@ -42,6 +42,11 @@ const icons = [
     markup: logo,
     viewBox: '0 0 534.79999 454.66666',
   },
+  {
+    id: 'star',
+    markup: logo,
+    viewBox: '0 0 19.481 19.481',
+  },
 ]
 
 export default icons

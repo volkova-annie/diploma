@@ -8,11 +8,9 @@ query {
         title
         type
         image {
-          responsiveResolution(width: 1280) {
-            src
-            srcSet
-            height
-            width
+          file {
+            url
+            contentType
           }
         }
       }
@@ -30,11 +28,9 @@ query {
         }
         type
         image {
-          responsiveResolution(width: 1280) {
-            src
-            srcSet
-            height
-            width
+          file {
+            url
+            contentType
           }
         }
       }
@@ -51,11 +47,24 @@ query {
         }
         price
         image {
-          responsiveResolution(width: 1280) {
-            src
-            srcSet
-            height
-            width
+          file {
+            url
+            contentType
+          }
+        }
+      }
+    }
+  }
+  slider: allContentfulHomePageSlider {
+    edges {
+      node {
+        node_locale
+        id
+        title
+        picture {
+          file {
+            url
+            contentType
           }
         }
       }

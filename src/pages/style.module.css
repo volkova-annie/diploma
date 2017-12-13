@@ -44,9 +44,20 @@
 }
 
 @media (max-width: 767px) {
+  .section {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+
   .section_description {
     width: calc(100% - 2rem);
     max-width: 100%;
+  }
+
+  .heading {
+    width: max-content;
+    max-width: calc(100% - 3rem);
+    margin: 0 auto 1rem;
   }
 
   .text {
