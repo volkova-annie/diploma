@@ -9,6 +9,7 @@ ghpages.publish('public', {
     email: 'me@akurganow.ru'
   },
   repo: 'https://' + process.env.GH_TOKEN + '@github.com/Cuba28/cuba-site.git',
+  message: 'Updates [ci skip]',
 }, () => {
   console.info('Deploy finished')
 })
