@@ -34,7 +34,7 @@
     "deploy:ci": "rm -rf public && gatsby build --prefix-paths && node ghpages.js",
     "deploy": "rm -rf public && gatsby build --prefix-paths && gh-pages -d public -m Updates [ci skip]",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
-    "lint": "eslint ./src & stylelint \"./src/{components,css}/*.css\"",
+    "lint": "eslint ./src & stylelint \"./src/**/*.css\"",
     "precommit": "lint-staged"
   },
   "devDependencies": {
