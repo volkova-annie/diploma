@@ -11,7 +11,7 @@ const Actions = (props) => {
   return <div className={st.actions}>
     <Iconed
       className={st.action}
-      link='https://maps.google.com?q=Cuba+Bar,+Gorohovaya+28'
+      link='https://maps.google.com?q=Cuba28,+Gorohovaya+28'
       icon='place'
       title={t({ru:'Адрес', en: 'Address'})}
       subtitle={t({ru: 'Санкт-Петербург, Гороховая, 28', en: 'Saint Petersburg, Gorohovaya, 28'})} />

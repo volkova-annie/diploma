@@ -23,7 +23,7 @@ class ContactsPage extends Component {
             <ul>
               <li>
                 <strong>{t({ ru: 'Адрес:', en: 'Address:' })}</strong>{' '}
-                <a href='https://maps.google.com?q=Cuba+Bar,+Gorohovaya+28'>{
+                <a href='https://maps.google.com?q=Cuba28,+Gorohovaya+28'>{
                   t({
                     ru: 'Санкт-Петербург, Гороховая, 28',
                     en: 'St. Petersburg, Gorohovaya str. 28',
