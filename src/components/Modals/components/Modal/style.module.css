@@ -11,7 +11,8 @@
   background-color: var(--color-light);
   color: var(--color-blue);
   outline-color: var(--color-red);
-  min-width: 380px;
+  width: 100%;
+  max-width: 700px;
 
   & input, & button, & textarea, & a {
     outline-color: var(--color-red);

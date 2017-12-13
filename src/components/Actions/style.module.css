@@ -20,10 +20,6 @@
   cursor: not-allowed;
 }
 
-span.action {
-  pointer-events: none;
-}
-
 .action {
   padding: 20px;
   transition: all 0.15s;
