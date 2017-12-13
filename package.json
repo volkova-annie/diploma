@@ -29,9 +29,9 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
+    "build": "rm -rf public && gatsby build",
     "develop": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && node ghpages.js",
+    "deploy": "rm -rf public && gatsby build --prefix-paths && node ghpages.js",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "lint": "eslint ./src & stylelint \"./src/{components,css}/*.css\"",
     "precommit": "lint-staged"
