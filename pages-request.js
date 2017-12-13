@@ -1,21 +1,5 @@
 module.exports = `
 query {
-  gallery: allContentfulGallery {
-    edges {
-      node {
-        node_locale
-        id
-        title
-        type
-        image {
-          file {
-            url
-            contentType
-          }
-        }
-      }
-    }
-  }
   events: allContentfulEvents {
     edges {
       node {

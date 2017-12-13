@@ -13,12 +13,14 @@ const menuPost = path.resolve(process.cwd(), 'src/templates/menu/single.js')
 // const galleryPage = path.resolve(process.cwd(), 'src/templates/gallery/index.js')
 // const galleryPost = path.resolve(process.cwd(), 'src/templates/gallery/single.js')
 
-function createPost(node) {
-  const date = moment(node.en.createdAt).format('YY-MM-d')
+function createPost(withDate, node) {
+  const date = node.en.date
+    ? moment(node.en.date).format('YY-MM-DD')
+    : null
 
   return Object.assign({}, node, {
     formatedDate: date,
-    slug: slug(`${date}-${node.en.title}`).toLowerCase()
+    slug: slug(`${withDate && date ? `${date}-` : ''}${node.en.title}`).toLowerCase()
   })
 }
 
@@ -51,8 +53,8 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
 
   let { events, menu, gallery, slider } = result.data
 
-  events = combineNodes(events.edges).map(createPost)
-  menu = combineNodes(menu.edges).map(createPost)
+  events = combineNodes(events.edges).map(createPost.bind(null, true))
+  menu = combineNodes(menu.edges).map(createPost.bind(null, false))
   // gallery = combineNodes(gallery.edges).map(createPost)
   slider = combineNodes(slider.edges)
 
