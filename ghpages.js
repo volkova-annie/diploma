@@ -8,7 +8,7 @@ ghpages.publish('public', {
     name: 'Alex Kurganov',
     email: 'me@akurganow.ru'
   },
-  repo: 'https://' + process.env.GH_TOKEN + '@github.com/Cuba28/cuba-site.git',
+  repo: 'https://' + process.env.GH_TOKEN + '@github.com/volkova-annie/diploma.git',
   message: 'Updates [ci skip]',
 }, () => {
   console.info('Deploy finished')

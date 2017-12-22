@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/',
+  pathPrefix: '/diploma',
   siteMetadata: {
     title: 'Cuba Bar - Golohovaya 28',
   },
