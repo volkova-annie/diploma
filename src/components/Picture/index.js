@@ -104,7 +104,10 @@ class Picture extends Component {
       ...modifiers,
     }
 
-    const html = `<img src='${file.url}?w=6&q=80' />`
+    // const html = `<img src='${file.url}?w=6&q=80' />`
+    const sources = getSources(props.file, mdfrs, szs)
+    const img = getImg(props.file.url, mdfrs, szs.default)
+    const html = `${sources}${img}`
 
     this.state = {
       html,
@@ -113,11 +116,11 @@ class Picture extends Component {
     }
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.loadFullSize()
-    }, 0);
-  }
+  // componentDidMount() {
+  //   setTimeout(() => {
+  //     this.loadFullSize()
+  //   }, 0);
+  // }
 
   loadFullSize = () => {
     const picture = document.createElement('picture')
